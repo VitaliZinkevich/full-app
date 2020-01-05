@@ -12,28 +12,30 @@ import {
   IonToolbar,
   IonToggle
 } from '@ionic/react';
-import { calendar, contacts, hammer, help, informationCircle, logIn, logOut, map, person, personAdd } from 'ionicons/icons';
+import { cash, contacts, hammer, help, informationCircle, logIn, logOut, map, person, personAdd } from 'ionicons/icons';
 import React, { useState } from 'react';
 import { connect } from '../data/connect';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { setDarkMode } from '../data/user/user.actions';
 
+
+
 const routes = {
   appPages: [
-    { title: 'Schedule', path: '/tabs/schedule', icon: calendar },
-    { title: 'Speakers', path: '/tabs/speakers', icon: contacts },
-    { title: 'Map', path: '/tabs/map', icon: map },
-    { title: 'About', path: '/tabs/about', icon: informationCircle }
+    { title: 'Прайс лист', path: '/tabs/schedule', icon: cash },
+    { title: 'Примеры работ', path: '/tabs/speakers', icon: contacts },
+    // { title: 'Map', path: '/tabs/map', icon: map },
+    { title: 'О нас', path: '/tabs/about', icon: informationCircle }
   ],
   loggedInPages: [
-    { title: 'Account', path: '/account', icon: person },
-    { title: 'Support', path: '/support', icon: help },
-    { title: 'Logout', path: '/logout', icon: logOut }
+    // { title: 'Account', path: '/account', icon: person },
+    // { title: 'Support', path: '/support', icon: help },
+    // { title: 'Logout', path: '/logout', icon: logOut }
   ],
   loggedOutPages: [
-    { title: 'Login', path: '/login', icon: logIn },
-    { title: 'Support', path: '/support', icon: help },
-    { title: 'Signup', path: '/signup', icon: personAdd }
+    // { title: 'Login', path: '/login', icon: logIn },
+    // { title: 'Support', path: '/support', icon: help },
+    // { title: 'Signup', path: '/signup', icon: personAdd }
   ]
 };
 
@@ -73,20 +75,20 @@ const Menu: React.FC<MenuProps> = ({ darkMode, history, isAuthenticated, setDark
   return (
     <IonMenu type="overlay" disabled={disableMenu} contentId="main">
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Menu</IonTitle>
-        </IonToolbar>
+        {/* <IonToolbar>
+          <IonTitle>Меню</IonTitle>
+        </IonToolbar> */}
       </IonHeader>
       <IonContent class="outer-content">
         <IonList>
-          <IonListHeader>Navigate</IonListHeader>
+          <IonListHeader>Меню</IonListHeader>
           {renderlistItems(routes.appPages)}
         </IonList>
-        <IonList>
+        {/* <IonList>
           <IonListHeader>Account</IonListHeader>
           {isAuthenticated ? renderlistItems(routes.loggedInPages) : renderlistItems(routes.loggedOutPages)}
-        </IonList>
-        <IonList>
+        </IonList> */}
+        {/* <IonList>
           <IonListHeader>Tutorial</IonListHeader>
           <IonItem onClick={() => {
             setDisableMenu(true);
@@ -95,13 +97,19 @@ const Menu: React.FC<MenuProps> = ({ darkMode, history, isAuthenticated, setDark
             <IonIcon slot="start" icon={hammer} />
             Show Tutorial
           </IonItem>
-        </IonList>
-        <IonList>
+        </IonList> */}
+        {/* <IonList> */}
           <IonItem>
-            <IonLabel>Dark Theme</IonLabel>
+            <IonLabel>Темная тема</IonLabel>
             <IonToggle checked={darkMode} onClick={() => setDarkMode(!darkMode)} />
           </IonItem>
-        </IonList>
+        {/* </IonList> */}
+        {/* <div className="login-logo1">
+          <img src="assets/img/appStore.svg" alt="appStore" height="250" width="200"/>
+        </div>
+        <div className="login-logo1">
+          <img src="assets/img/google-play-badge.png" alt="google-play" height="250" width="200"/>
+        </div> */}
       </IonContent>
     </IonMenu>
   );

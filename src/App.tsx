@@ -1,3 +1,4 @@
+// app remote
 import React, { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
@@ -76,7 +77,7 @@ const IonicApp: React.FC<IonicAppProps> = ({ darkMode, sessions, setIsLoggedIn, 
               <Menu />
               <IonRouterOutlet id="main">
                 <Route path="/tabs" component={MainTabs} />
-                <Route path="/account" component={Account} />
+                {/* <Route path="/account" component={Account} />
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />
                 <Route path="/support" component={Support} />
@@ -85,7 +86,7 @@ const IonicApp: React.FC<IonicAppProps> = ({ darkMode, sessions, setIsLoggedIn, 
                   setIsLoggedIn(false);
                   setUsername(undefined);
                   return <Redirect to="/tabs" />
-                }} />
+                }} /> */}
                 <Route path="/" component={HomeOrTutorial} exact />
               </IonRouterOutlet>
             </IonSplitPane>

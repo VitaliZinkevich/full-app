@@ -40,7 +40,7 @@ const SessionList: React.FC<SessionListProps> = ({ addFavorite, removeFavorite, 
     return (
       <IonList>
         <IonListHeader>
-          No Sessions Found
+         Тут будут расценки
         </IonListHeader>
       </IonList>
     );

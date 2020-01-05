@@ -24,12 +24,12 @@ const About: React.FC<AboutProps> = () => {
           <IonButtons slot="start">
             <IonMenuButton></IonMenuButton>
           </IonButtons>
-          <IonTitle>About</IonTitle>
-          <IonButtons slot="end">
+          <IonTitle>О нас</IonTitle>
+          {/* <IonButtons slot="end">
             <IonButton icon-only onClick={presentPopover}>
               <IonIcon slot="icon-only" icon={more}></IonIcon>
             </IonButton>
-          </IonButtons>
+          </IonButtons> */}
         </IonToolbar>
       </IonHeader>
       <IonContent>
@@ -38,9 +38,9 @@ const About: React.FC<AboutProps> = () => {
           <img src="assets/img/ionic-logo-white.svg" alt="ionic logo" />
         </div>
         <div className="about-info">
-          <h4 className="ion-padding-start">Ionic Conference</h4>
+          <h4 className="ion-padding-start">What is Lorem Ipsum?</h4>
 
-          <IonList lines="none">
+          {/* <IonList lines="none">
             <IonItem>
               <IonIcon icon={calendar} slot="start"></IonIcon>
               <IonLabel position="stacked">Date</IonLabel>
@@ -57,23 +57,20 @@ const About: React.FC<AboutProps> = () => {
                 <IonSelectOption value="seattle">Seattle, WA</IonSelectOption>
               </IonSelect>
             </IonItem>
-          </IonList>
+          </IonList> */}
 
           <p className="ion-padding-start ion-padding-end">
-            The Ionic Conference is a one-day conference featuring talks from the Ionic team. It is focused on Ionic applications being
-            built with Ionic 2. This includes migrating apps from Ionic 1 to Ionic 2, Angular concepts, Webpack, Sass, and many
-            other technologies used in Ionic 2. Tickets are completely sold out, and we’re expecting more than 1000 developers
-            – making this the largest Ionic conference ever!
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
           </p>
         </div>
       </IonContent>
-      <IonPopover
+      {/* <IonPopover
         isOpen={showPopover}
         event={popoverEvent}
         onDidDismiss={() => setShowPopover(false)}
       >
         <AboutPopover dismiss={() => setShowPopover(false)} /> 
-      </IonPopover>
+      </IonPopover> */}
     </IonPage>
   );
 };

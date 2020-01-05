@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { IonToolbar, IonContent, IonPage, IonButtons, IonMenuButton, IonSegment, IonSegmentButton, IonButton, IonIcon, IonSearchbar, IonRefresher, IonRefresherContent, IonToast, IonModal, IonHeader, getConfig } from '@ionic/react';
+import { IonList, IonListHeader, IonToolbar, IonContent, IonPage, IonButtons, IonMenuButton, IonSegment, IonSegmentButton, IonButton, IonIcon, IonSearchbar, IonRefresher, IonRefresherContent, IonToast, IonModal, IonHeader, getConfig } from '@ionic/react';
 import { connect } from '../data/connect';
 import { options } from 'ionicons/icons';
 import SessionList from '../components/SessionList';
@@ -9,6 +9,9 @@ import * as selectors from '../data/selectors';
 import { setSearchText, addFavorite, removeFavorite } from '../data/sessions/sessions.actions';
 import ShareSocialFab from '../components/ShareSocialFab';
 import { SessionGroup } from '../models/SessionGroup';
+
+import AddWorkForm from '../forms/AddWorkForm';
+
 
 interface OwnProps { }
 
@@ -47,26 +50,26 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoriteGroups, sessionGrou
 
           <IonSegment onIonChange={(e) => setSegment(e.detail.value as any)}>
             <IonSegmentButton value="all" checked={segment === 'all'}>
-              All
+              Расценки
             </IonSegmentButton>
             <IonSegmentButton value="favorites" checked={segment === 'favorites'}>
-              Favorites
+              Оформить заказ
             </IonSegmentButton>
           </IonSegment>
 
-          <IonButtons slot="end">
+          {/* <IonButtons slot="end">
             <IonButton onClick={() => setShowFilterModal(true)}>
               {mode === 'ios' ? 'Filter' : <IonIcon icon={options} slot="icon-only" />}
             </IonButton>
-          </IonButtons>
+          </IonButtons> */}
         </IonToolbar>
 
-        <IonToolbar>
+        {/* <IonToolbar>
           <IonSearchbar
             placeholder="Search"
             onIonChange={(e: CustomEvent) => setSearchText(e.detail.value)}
           />
-        </IonToolbar>
+        </IonToolbar> */}
       </IonHeader>
 
       <IonContent>
@@ -79,17 +82,24 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoriteGroups, sessionGrou
           duration={2000}
           onDidDismiss={() => setShowCompleteToast(false)}
         />
-
-        <SessionList
+        {segment === 'all' ? (
+          <IonList>
+            <IonListHeader>
+            Тут будут расценки
+            </IonListHeader>
+          </IonList>
+        ) : <AddWorkForm />}
+        {/* <SessionList
           sessionGroups={sessionGroups}
           listType={segment}
           hide={segment === 'favorites'}
         />
+
         <SessionList
           sessionGroups={favoriteGroups}
           listType={segment}
           hide={segment === 'all'}
-        />
+        /> */}
       </IonContent>
 
       <IonModal
@@ -101,7 +111,7 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoriteGroups, sessionGrou
         />
       </IonModal>
 
-      <ShareSocialFab />
+      {/* <ShareSocialFab /> */}
 
     </IonPage>
   );
