@@ -22,7 +22,7 @@ import { setDarkMode } from '../data/user/user.actions';
 
 const routes = {
   appPages: [
-    { title: 'Прайс лист', path: '/tabs/schedule', icon: cash },
+    { title: 'Цены, заказ', path: '/tabs/schedule', icon: cash },
     { title: 'Примеры работ', path: '/tabs/speakers', icon: contacts },
     // { title: 'Map', path: '/tabs/map', icon: map },
     { title: 'О нас', path: '/tabs/about', icon: informationCircle }
@@ -100,7 +100,7 @@ const Menu: React.FC<MenuProps> = ({ darkMode, history, isAuthenticated, setDark
         </IonList> */}
         {/* <IonList> */}
           <IonItem>
-            <IonLabel>Темная тема</IonLabel>
+            <IonLabel>Выключить свет</IonLabel>
             <IonToggle checked={darkMode} onClick={() => setDarkMode(!darkMode)} />
           </IonItem>
         {/* </IonList> */}

@@ -32,7 +32,7 @@ const MainTabs: React.FC<MainTabsProps> = () => {
       <IonTabBar slot="bottom">
         <IonTabButton tab="schedule" href="/tabs/schedule">
           <IonIcon icon={cash} />
-          <IonLabel>Прайс лист</IonLabel>
+          <IonLabel>Цены, заказ</IonLabel>
         </IonTabButton>
         <IonTabButton tab="speakers" href="/tabs/speakers">
           <IonIcon icon={contacts} />

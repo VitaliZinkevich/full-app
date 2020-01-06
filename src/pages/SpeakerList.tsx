@@ -31,7 +31,7 @@ const SpeakerList: React.FC<SpeakerListProps> = ({ speakers, speakerSessions }) 
         </IonToolbar>
       </IonHeader>
 
-      <IonContent className={`outer-content`}>
+      <IonContent forceOverscroll={true} className={`outer-content`}>
         <IonList>
           <IonGrid fixed>
             <IonRow align-items-stretch>

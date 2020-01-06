@@ -1,4 +1,5 @@
 // app remote
+// раздел отображения цен 
 import React, { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';

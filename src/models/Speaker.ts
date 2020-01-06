@@ -3,7 +3,7 @@ export interface Speaker {
   name: string;
   profilePic: string;
   twitter: string;
-  about: string;
+  about: [{name: string, descr: string ,foto: [string]}];
   location: string;
   email: string;
   phone: string;

@@ -50,7 +50,7 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoriteGroups, sessionGrou
 
           <IonSegment onIonChange={(e) => setSegment(e.detail.value as any)}>
             <IonSegmentButton value="all" checked={segment === 'all'}>
-              Расценки
+              Цены
             </IonSegmentButton>
             <IonSegmentButton value="favorites" checked={segment === 'favorites'}>
               Оформить заказ
