@@ -63,13 +63,14 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoriteGroups, sessionGrou
             </IonButton>
           </IonButtons> */}
         </IonToolbar>
-
-        {/* <IonToolbar>
+        
+        {segment === 'all' ? (<IonToolbar>
           <IonSearchbar
-            placeholder="Search"
+            placeholder="Поиск"
             onIonChange={(e: CustomEvent) => setSearchText(e.detail.value)}
           />
-        </IonToolbar> */}
+        </IonToolbar>) : null}
+        
       </IonHeader>
 
       <IonContent>
@@ -83,11 +84,10 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoriteGroups, sessionGrou
           onDidDismiss={() => setShowCompleteToast(false)}
         />
         {segment === 'all' ? (
-          <IonList>
-            <IonListHeader>
-            Тут будут расценки
-            </IonListHeader>
-          </IonList>
+          <SessionList
+          sessionGroups={sessionGroups}
+          listType={segment}
+        />
         ) : <AddWorkForm />}
         {/* <SessionList
           sessionGroups={sessionGroups}

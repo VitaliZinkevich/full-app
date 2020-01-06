@@ -26,7 +26,7 @@ type SessionDetailProps = OwnProps & StateProps & DispatchProps;
 const SessionDetail: React.FC<SessionDetailProps> = ({ session, addFavorite, removeFavorite, favoriteSessions }) => {
 
   if (!session) {
-    return <div>Session not found</div>
+    return <div>Ничего не найдено</div>
   }
 
   const isFavorite = favoriteSessions.indexOf(session.id) > -1;
@@ -46,7 +46,7 @@ const SessionDetail: React.FC<SessionDetailProps> = ({ session, addFavorite, rem
           <IonButtons slot="start">
             <IonBackButton defaultHref="/tabs/schedule"></IonBackButton>
           </IonButtons>
-          <IonButtons slot="end">
+          {/* <IonButtons slot="end">
             <IonButton onClick={() => toggleFavorite()}>
               {isFavorite ?
                 <IonIcon slot="icon-only" icon={star}></IonIcon> :
@@ -56,15 +56,15 @@ const SessionDetail: React.FC<SessionDetailProps> = ({ session, addFavorite, rem
             <IonButton onClick={() => shareSession}>
               <IonIcon slot="icon-only" icon={share}></IonIcon>
             </IonButton>
-          </IonButtons>
+          </IonButtons> */}
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <div className="ion-padding">
           <h1>{session.name}</h1>
-          {session.tracks.map(track => (
-            <span key={track} className={`session-track-${track.toLowerCase()}`}>{track}</span>
-          ))}
+            {session.tracks.map(track => (
+              <span key={track} className={`session-track-${track.toLowerCase()} category`}>{track} </span>
+            ))}
           <p>{session.description}</p>
           <IonText color="medium">
             <Time date={session.dateTimeStart} /> &ndash; <Time date={session.dateTimeEnd} />
@@ -73,7 +73,7 @@ const SessionDetail: React.FC<SessionDetailProps> = ({ session, addFavorite, rem
           </IonText>
         </div>
         <IonList>
-          <IonItem onClick={() => sessionClick('watch')} button>
+          {/* <IonItem onClick={() => sessionClick('watch')} button>
             <IonLabel color="primary">Watch</IonLabel>
           </IonItem>
           <IonItem onClick={() => sessionClick('add to calendar')} button>
@@ -88,6 +88,9 @@ const SessionDetail: React.FC<SessionDetailProps> = ({ session, addFavorite, rem
           </IonItem>
           <IonItem onClick={() => sessionClick('leave feedback')} button>
             <IonLabel color="primary">Leave Feedback</IonLabel>
+          </IonItem> */}
+          <IonItem onClick={()=>{}} button lines="none">
+            <IonLabel color="primary">Позвонить</IonLabel>
           </IonItem>
         </IonList>
       </IonContent>

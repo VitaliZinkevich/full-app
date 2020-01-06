@@ -100,7 +100,7 @@ const Menu: React.FC<MenuProps> = ({ darkMode, history, isAuthenticated, setDark
         </IonList> */}
         {/* <IonList> */}
           <IonItem>
-            <IonLabel>Выключить свет</IonLabel>
+            <IonLabel>{darkMode ? 'Включить свет' : 'Выключить свет'}</IonLabel>
             <IonToggle checked={darkMode} onClick={() => setDarkMode(!darkMode)} />
           </IonItem>
         {/* </IonList> */}
