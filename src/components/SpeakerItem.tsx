@@ -68,7 +68,7 @@ const SpeakerItem: React.FC<SpeakerItemProps> = ({ speaker, sessions }) => {
         <IonCardHeader>
           <IonItem button detail={false} routerLink={`/tabs/speakers/${speaker.id}`} lines="none">
             {/* <IonAvatar> */}
-              <img className="avatarFoto" src={speaker.profilePic} alt="Speaker profile pic" height="100%"  />
+              <img className="avatarFoto" src={speaker.profilePic} alt={`${speaker.profilePic}`} height="100%"  />
             {/* </IonAvatar> */}
             {/* {speaker.name} */}
           </IonItem>
