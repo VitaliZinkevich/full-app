@@ -1,5 +1,5 @@
-import React from 'react';
-import { IonHeader, IonToolbar, IonContent, IonPage, IonButtons, IonBackButton, IonButton, IonIcon, IonText, IonList, IonItem, IonLabel } from '@ionic/react';
+import React, {useState} from 'react';
+import { IonActionSheet, IonHeader, IonToolbar, IonContent, IonPage, IonButtons, IonBackButton, IonButton, IonIcon, IonText, IonList, IonItem, IonLabel } from '@ionic/react';
 import { connect } from '../data/connect';
 import { withRouter, RouteComponentProps } from 'react-router';
 import * as selectors from '../data/selectors';
@@ -8,6 +8,8 @@ import './SessionDetail.scss';
 import { Time } from '../components/Time';
 import { addFavorite, removeFavorite } from '../data/sessions/sessions.actions';
 import { Session } from '../models/Session';
+import { Speaker } from '../models/Speaker';
+import { ActionSheetButton } from '@ionic/core';
 
 interface OwnProps extends RouteComponentProps { };
 
@@ -24,6 +26,29 @@ interface DispatchProps {
 type SessionDetailProps = OwnProps & StateProps & DispatchProps;
 
 const SessionDetail: React.FC<SessionDetailProps> = ({ session, addFavorite, removeFavorite, favoriteSessions }) => {
+
+  const [showActionSheet, setShowActionSheet] = useState(false);
+  const [actionSheetButtons, setActionSheetButtons] = useState<ActionSheetButton[]>([]);
+  const [actionSheetHeader, setActionSheetHeader] = useState('');
+
+  function openContact(speaker: Session) {
+    setActionSheetButtons([
+      // {
+      //   text: `Email ( ${speaker.email} )`,
+      //   handler: () => {
+      //     window.open('mailto:' + speaker.email);
+      //   }
+      // },
+      {
+        text: `Телефон ( ${speaker.phone} )`,
+        handler: () => {
+          window.open('tel:' + speaker.phone);
+        }
+      }
+    ]);
+    setActionSheetHeader(`${speaker.name}`);
+    setShowActionSheet(true);
+  }
 
   if (!session) {
     return <div>Ничего не найдено</div>
@@ -89,10 +114,16 @@ const SessionDetail: React.FC<SessionDetailProps> = ({ session, addFavorite, rem
           <IonItem onClick={() => sessionClick('leave feedback')} button>
             <IonLabel color="primary">Leave Feedback</IonLabel>
           </IonItem> */}
-          <IonItem onClick={()=>{}} button lines="none">
+          <IonItem onClick={() => openContact(session)} button={true} lines="none">
             <IonLabel color="primary">Позвонить</IonLabel>
           </IonItem>
         </IonList>
+        <IonActionSheet
+        isOpen={showActionSheet}
+        header={actionSheetHeader}
+        onDidDismiss={() => setShowActionSheet(false)}
+        buttons={actionSheetButtons}
+      />
       </IonContent>
     </IonPage>
   );

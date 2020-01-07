@@ -88,7 +88,7 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoriteGroups, sessionGrou
           sessionGroups={sessionGroups}
           listType={segment}
         />
-        ) : <AddWorkForm />}
+        ) : "тут будет форма добавления заказа".toUpperCase()/*<AddWorkForm />*/}
         {/* <SessionList
           sessionGroups={sessionGroups}
           listType={segment}

@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { IonItemSliding, IonAlert, IonItem, IonLabel, IonItemOptions, IonItemOption, AlertButton } from '@ionic/react';
 import { Time } from './Time';
 import { Session } from '../models/Session';
+import './SessionListItem.scss'
 
 interface SessionListItemProps {
   session: Session;
@@ -57,7 +58,7 @@ const SessionListItem: React.FC<SessionListItemProps> = ({ isFavorite, onAddFavo
     <IonItemSliding ref={ionItemSlidingRef} class={'track-' + session.tracks[0].toLowerCase()}>
       <IonItem routerLink={`/tabs/schedule/${session.id}`}>
         <IonLabel>
-          <h3>{session.name}</h3>
+          <p className="workName">{session.name}</p>
           <p>
             <Time date={session.dateTimeStart} /> &mdash;&nbsp;
             <Time date={session.dateTimeEnd} /> &mdash;&nbsp;

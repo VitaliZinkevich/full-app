@@ -7,4 +7,5 @@ export interface Session {
   description: string;
   speakerIds: number[];
   tracks: string[];
+  phone: string;
 }

@@ -95,7 +95,7 @@ const AddWorkForm: React.FC/*<LoginProps>*/ = ({/*setIsLoggedIn, history, setUse
 
           <IonRow>
             <IonCol>
-              <IonButton type="submit" expand="block">Расчитать</IonButton>
+              <IonButton type="submit" expand="block">Заказать</IonButton>
             </IonCol>
             {/* <IonCol>
               <IonButton routerLink="/signup" color="light" expand="block">Signup</IonButton>
