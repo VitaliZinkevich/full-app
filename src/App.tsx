@@ -1,5 +1,5 @@
 // app remote
-// форма добавления заказа
+
 // дата фетчинг 1 простой раздел реализовать, запустить не локально, а через сеть
 import React, { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';

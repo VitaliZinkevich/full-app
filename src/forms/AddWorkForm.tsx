@@ -24,7 +24,7 @@ const AddWorkForm: React.FC = () => {
   const postOrder = async (e: React.FormEvent ) => {
     e.preventDefault();
     if (!validator.isMobilePhone(phone, ['ru-RU', 'be-BY'])){
-     return toast('Введите валидный номер для Беларуси.')
+     return toast('Введите валидный номер телефона для Беларуси.')
     }
     console.log(phone)
     // идем оставлять заявку

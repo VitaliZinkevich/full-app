@@ -12,13 +12,29 @@ import { SessionGroup } from '../models/SessionGroup';
 
 import AddWorkForm from '../forms/AddWorkForm';
 
+import { Plugins } from '@capacitor/core';
+
+const { Storage } = Plugins;
+
+const setItem: any = async function (key: string, value:string) {
+  Storage.set({
+    key: key,
+    value: value
+  });
+}
+
+
+const getItem: any = async function (key: string) {
+  const { value } = await Storage.get({ key: key });
+  return value;
+}
 
 interface OwnProps { }
 
 interface StateProps {
   sessionGroups: SessionGroup[];
   favoriteGroups: SessionGroup[];
-  mode: 'ios' | 'md'
+  mode: 'ios' | 'md',
 }
 
 interface DispatchProps {
@@ -32,6 +48,8 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoriteGroups, sessionGrou
   const [showFilterModal, setShowFilterModal] = useState(false);
   const ionRefresherRef = useRef<HTMLIonRefresherElement>(null);
   const [showCompleteToast, setShowCompleteToast] = useState(false);
+  const [searchTextLocal, setSearchTextLocal] = useState('');
+  
 
   const doRefresh = () => {
     setTimeout(() => {
@@ -39,6 +57,24 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoriteGroups, sessionGrou
       setShowCompleteToast(true);
     }, 2500)
   };
+
+  const searchText = (e: any) => {
+    setSearchTextLocal(e);
+    setSearchText(e);
+  }
+
+  const switchSegment = async (e: any)=>{
+    if (e === 'all') {
+      const searchStorage = await getItem('search');
+      if (searchStorage) {
+        setSearchText(searchStorage);
+        setSearchTextLocal(searchStorage);
+      }
+    } else {
+      setItem('search', searchTextLocal)
+    }
+    setSegment(e);
+  }
 
   return (
     <IonPage id="schedule-page">
@@ -48,7 +84,7 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoriteGroups, sessionGrou
             <IonMenuButton />
           </IonButtons>
 
-          <IonSegment onIonChange={(e) => setSegment(e.detail.value as any)}>
+          <IonSegment onIonChange={(e) =>{switchSegment(e.detail.value as any)} }>
             <IonSegmentButton value="all" checked={segment === 'all'}>
               Цены
             </IonSegmentButton>
@@ -67,16 +103,17 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoriteGroups, sessionGrou
         {segment === 'all' ? (<IonToolbar>
           <IonSearchbar
             placeholder="Поиск"
-            onIonChange={(e: CustomEvent) => setSearchText(e.detail.value)}
+            onIonChange={(e: CustomEvent) => {searchText(e.detail.value)}}
+            value={searchTextLocal}
           />
         </IonToolbar>) : null}
         
       </IonHeader>
 
       <IonContent>
-        <IonRefresher slot="fixed" ref={ionRefresherRef} onIonRefresh={doRefresh}>
+        {/* <IonRefresher slot="fixed" ref={ionRefresherRef} onIonRefresh={doRefresh}>
           <IonRefresherContent />
-        </IonRefresher>
+        </IonRefresher> */}
         <IonToast
           isOpen={showCompleteToast}
           message="Refresh complete"
@@ -124,7 +161,7 @@ export default connect<OwnProps, StateProps, DispatchProps>({
     mode: getConfig()!.get('mode')
   }),
   mapDispatchToProps: {
-    setSearchText
-  },
+    setSearchText,
+    },
   component: React.memo(SchedulePage)
 });

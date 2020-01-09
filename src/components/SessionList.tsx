@@ -35,12 +35,12 @@ const SessionList: React.FC<SessionListProps> = ({ addFavorite, removeFavorite, 
     setAlertButtons(buttons);
     setShowAlert(true);
   }, []);
-
   if (sessionGroups.length === 0 && !hide) {
     return (
       <IonList>
         <IonListHeader>
-         Тут будут расценки
+         Ничего не найдено... 
+         Можем обсудить +375291234567
         </IonListHeader>
       </IonList>
     );
@@ -52,7 +52,7 @@ const SessionList: React.FC<SessionListProps> = ({ addFavorite, removeFavorite, 
         {sessionGroups.map((group, index: number) => (
           <IonItemGroup key={`group-${index}`}>
             <IonItemDivider sticky>
-              <IonLabel>
+              <IonLabel color="primary">
                 <Time date={group.startTime} />
               </IonLabel>
             </IonItemDivider>

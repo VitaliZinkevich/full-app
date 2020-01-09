@@ -70,10 +70,10 @@ function groupSessions(sessions: Session[]) {
       parseDate(a.dateTimeStart).valueOf() - parseDate(b.dateTimeStart).valueOf()
     ))
     .reduce((groups, session) => {
-      let starterHour = parseDate(session.dateTimeStart);
-      starterHour.setMinutes(0);
-      starterHour.setSeconds(0);
-      const starterHourStr = starterHour.toJSON();
+      let starterHour = session.dateTimeStart /*parseDate()*/;
+      // starterHour.setMinutes(0);
+      // starterHour.setSeconds(0);
+      const starterHourStr = starterHour;
       const foundGroup = groups.find(group => group.startTime === starterHourStr);
       if (foundGroup) {
         foundGroup.sessions.push(session);
