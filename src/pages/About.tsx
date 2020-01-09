@@ -24,7 +24,7 @@ const About: React.FC<AboutProps> = () => {
           <IonButtons slot="start">
             <IonMenuButton></IonMenuButton>
           </IonButtons>
-          <IonTitle>О нас</IonTitle>
+          <IonTitle>Контакты</IonTitle>
           {/* <IonButtons slot="end">
             <IonButton icon-only onClick={presentPopover}>
               <IonIcon slot="icon-only" icon={more}></IonIcon>

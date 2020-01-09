@@ -53,7 +53,7 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoriteGroups, sessionGrou
               Цены
             </IonSegmentButton>
             <IonSegmentButton value="favorites" checked={segment === 'favorites'}>
-              Оформить заказ
+              Заказать звонок
             </IonSegmentButton>
           </IonSegment>
 
@@ -88,7 +88,7 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoriteGroups, sessionGrou
           sessionGroups={sessionGroups}
           listType={segment}
         />
-        ) : "тут будет форма добавления заказа".toUpperCase()/*<AddWorkForm />*/}
+        ) : <AddWorkForm />}
         {/* <SessionList
           sessionGroups={sessionGroups}
           listType={segment}

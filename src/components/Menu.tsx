@@ -25,7 +25,7 @@ const routes = {
     { title: 'Цены, заказ', path: '/tabs/schedule', icon: cash },
     { title: 'Примеры работ', path: '/tabs/speakers', icon: contacts },
     // { title: 'Map', path: '/tabs/map', icon: map },
-    { title: 'О нас', path: '/tabs/about', icon: informationCircle }
+    { title: 'Контакты', path: '/tabs/about', icon: informationCircle }
   ],
   loggedInPages: [
     // { title: 'Account', path: '/account', icon: person },

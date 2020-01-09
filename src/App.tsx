@@ -1,5 +1,6 @@
 // app remote
-// кнопка звонка из описания работ
+// форма добавления заказа
+// дата фетчинг 1 простой раздел реализовать, запустить не локально, а через сеть
 import React, { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';

@@ -1,105 +1,70 @@
-import React, { useState } from 'react';
-import { IonIcon, IonSelect, IonDatetime, IonSelectOption,IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonButtons, IonMenuButton, IonRow, IonCol, IonButton, IonList, IonItem, IonLabel, IonInput, IonText } from '@ionic/react';
-// import './Login.scss';
-import { calendar, pin, more } from 'ionicons/icons';
-// import { setIsLoggedIn, setUsername } from '../data/user/user.actions';
-import { connect } from '../data/connect';
-// import { RouteComponentProps } from 'react-router';
+import React, { useState, ReactElement } from 'react';
+import { IonIcon, IonSelect,  IonSelectOption, IonRow, IonCol, IonButton, IonList, IonItem, IonLabel, IonInput, IonText } from '@ionic/react';
+import './AddWorkForm.scss';
+import { call, person, build } from 'ionicons/icons';
+import toast from '../pages/toast'
+import validator from 'validator';
 
-// interface OwnProps extends RouteComponentProps {}
 
-// interface DispatchProps {
-//   setIsLoggedIn: typeof setIsLoggedIn;
-//   setUsername: typeof setUsername;
-// }
 
-// interface LoginProps extends OwnProps,  DispatchProps { }
 
-const AddWorkForm: React.FC/*<LoginProps>*/ = ({/*setIsLoggedIn, history, setUsername: setUsernameAction*/}) => {
+const AddWorkForm: React.FC = () => {
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [usernameError, setUsernameError] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
+  const [name, setName] = useState<string>('');
+  const [phone, setPhone] = useState<string>('+375');
+  const [workType, setWorkType] = useState([]);
 
-  const login = async (e: React.FormEvent) => {
+  const phoneMask = (e: string)=>{
+    if (!Number.isInteger (Number (e.split("").pop()))){
+      return toast('Не верный номер. Только числа, пожалуйста.');
+    }
+    setPhone(e);
+  }
+
+  const postOrder = async (e: React.FormEvent ) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    if(!username) {
-      setUsernameError(true);
+    if (!validator.isMobilePhone(phone, ['ru-RU', 'be-BY'])){
+     return toast('Введите валидный номер для Беларуси.')
     }
-    if(!password) {
-      setPasswordError(true);
-    }
-
-    if(username && password) {
-    //   await setIsLoggedIn(true);
-    //   await setUsernameAction(username);
-    //   history.push('/tabs/schedule', {direction: 'none'});
-    }
+    console.log(phone)
+    // идем оставлять заявку
   };
-  const conferenceDate = '2047-05-17';
 
   return (
     <>
-       {/* <div className="login-logo">
-          <img src="assets/img/appicon.svg" alt="Ionic logo" />
-        </div> */}
-        <form noValidate onSubmit={login}>
+      <form noValidate className="orderForm" onSubmit={postOrder}>
           <IonList>
             <IonItem>
-              <IonLabel position="stacked" color="primary">Username</IonLabel>
-              <IonInput name="username" type="text" value={username} spellCheck={false} autocapitalize="off" onIonChange={e => setUsername(e.detail.value!)}
+            <IonLabel position="floating" color="primary"><IonIcon icon={person}/> <IonText>Ваше имя</IonText></IonLabel>
+              <IonInput color={'dark'} clearInput name="name" type="text" value={name} spellCheck={false} autocapitalize="off" onIonChange={e => setName(e.detail.value!)}
                 required>
               </IonInput>
             </IonItem>
-
-            {formSubmitted && usernameError && <IonText color="danger">
-              <p className="ion-padding-start">
-                Username is required
-              </p>
-            </IonText>}
-
             <IonItem>
-              <IonLabel position="stacked" color="primary">Password</IonLabel>
-              <IonInput name="password" type="password" value={password} onIonChange={e => setPassword(e.detail.value!)}>
+            <IonLabel position="floating"  color="primary"><IonIcon icon={call}/> <IonText>Номер телефона</IonText> </IonLabel>
+              <IonInput color={'dark'} placeholder='+375291234567' name="phone" type="text" value={phone} onIonChange={e => phoneMask(e.detail.value!)}>
               </IonInput>
             </IonItem>
-
-            {formSubmitted && passwordError && <IonText color="danger">
-              <p className="ion-padding-start">
-                Password is required
-              </p>
-            </IonText>}
           </IonList>
 
-          <IonList lines="none">
-            <IonItem>
-              <IonIcon icon={calendar} slot="start"></IonIcon>
-              <IonLabel position="stacked">Date</IonLabel>
-              <IonDatetime displayFormat="MMM DD, YYYY" max="2056" value={conferenceDate}></IonDatetime>
-            </IonItem>
-
-            <IonItem>
-              <IonIcon icon={pin} slot="start"></IonIcon>
-              <IonLabel position="stacked">Location</IonLabel>
-              <IonSelect>
-                <IonSelectOption value="madison" selected>Madison, WI</IonSelectOption>
-                <IonSelectOption value="austin">Austin, TX</IonSelectOption>
-                <IonSelectOption value="chicago">Chicago, IL</IonSelectOption>
-                <IonSelectOption value="seattle">Seattle, WA</IonSelectOption>
-              </IonSelect>
-            </IonItem>
-          </IonList>
-
+    <IonList>
+    <IonItem>
+    
+        {/* <IonIcon color='primary' icon={build}/> */}
+        <IonLabel color='primary'>Тип работ</IonLabel>
+        <IonSelect className='myselect' color={'dark'} value={workType} multiple={true} cancelText="Отмена" okText="Выбрать" onIonChange={(e)=>{setWorkType(e.detail.value!)}}>
+          <IonSelectOption value="bacon">Штукатутрка внешняя</IonSelectOption>
+          <IonSelectOption value="olives">Штукатутрка внутренния</IonSelectOption>
+          <IonSelectOption value="xcheese">Отделка внутренния</IonSelectOption>
+          <IonSelectOption value="peppers">Отделка чистовая</IonSelectOption>
+          <IonSelectOption value="mushrooms">Выравнивание потолков</IonSelectOption>
+        </IonSelect>
+      </IonItem>
+    </IonList>
           <IonRow>
             <IonCol>
               <IonButton type="submit" expand="block">Заказать</IonButton>
             </IonCol>
-            {/* <IonCol>
-              <IonButton routerLink="/signup" color="light" expand="block">Signup</IonButton>
-            </IonCol> */}
           </IonRow>
         </form>
       </>
