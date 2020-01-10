@@ -13,17 +13,27 @@ import {
   IonToggle
 } from '@ionic/react';
 import { cash, contacts, hammer, help, informationCircle, logIn, logOut, map, person, personAdd } from 'ionicons/icons';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from '../data/connect';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { setDarkMode } from '../data/user/user.actions';
-
-
+import { Plugins } from '@capacitor/core';
+const { Storage } = Plugins;
+const setItem: any = async function (key: string, value:string) {
+  Storage.set({
+    key: key,
+    value: value
+  });
+}
+const getItem: any = async function (key: string) {
+  const { value } = await Storage.get({ key: key });
+  return value;
+}
 
 const routes = {
   appPages: [
-    { title: 'Цены, заказ', path: '/tabs/schedule', icon: cash },
-    { title: 'Примеры работ', path: '/tabs/speakers', icon: contacts },
+    { title: 'Цены, заказ', path: '/tabs/price', icon: cash },
+    { title: 'Примеры работ', path: '/tabs/examples', icon: contacts },
     // { title: 'Map', path: '/tabs/map', icon: map },
     { title: 'Контакты', path: '/tabs/about', icon: informationCircle }
   ],
@@ -57,7 +67,15 @@ interface DispatchProps {
 interface MenuProps extends RouteComponentProps, StateProps, DispatchProps { }
 
 const Menu: React.FC<MenuProps> = ({ darkMode, history, isAuthenticated, setDarkMode }) => {
-  const [disableMenu, setDisableMenu] = useState(false);
+  console.log ('props')
+  console.log (darkMode)
+
+  const [disableMenu, setDisableMenu] = useState();
+
+  async function setLite () {
+    setItem('light', !darkMode)
+    setDarkMode(!darkMode)
+  }
 
   function renderlistItems(list: Pages[]) {
     return list
@@ -71,7 +89,6 @@ const Menu: React.FC<MenuProps> = ({ darkMode, history, isAuthenticated, setDark
         </IonMenuToggle>
       ));
   }
-
   return (
     <IonMenu type="overlay" disabled={disableMenu} contentId="main">
       <IonHeader>
@@ -100,8 +117,9 @@ const Menu: React.FC<MenuProps> = ({ darkMode, history, isAuthenticated, setDark
         </IonList> */}
         {/* <IonList> */}
           <IonItem lines="none">
-            <IonLabel>{darkMode ? 'Включить свет' : 'Выключить свет'}</IonLabel>
-            <IonToggle checked={darkMode} onClick={() => setDarkMode(!darkMode)} />
+            <IonLabel>Темная тема</IonLabel>
+            <IonToggle checked={darkMode} onClick={() => setLite ()} />
+            
           </IonItem>
         {/* </IonList> */}
         {/* <div className="login-logo1">

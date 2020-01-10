@@ -52,7 +52,7 @@ const SpeakerDetail: React.FC<SpeakerDetailProps> = ({ speaker }) => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton defaultHref="/tabs/speakers" />
+            <IonBackButton defaultHref="/tabs/examples" />
           </IonButtons>
           <IonTitle>{speaker.name}</IonTitle>
         </IonToolbar>

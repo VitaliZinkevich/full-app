@@ -1,5 +1,4 @@
 // app remote
-
 // дата фетчинг 1 простой раздел реализовать, запустить не локально, а через сеть
 import React, { useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
@@ -66,7 +65,6 @@ const IonicApp: React.FC<IonicAppProps> = ({ darkMode, sessions, setIsLoggedIn, 
   useEffect(() => {
     loadUserData();
     loadConfData();
-    // eslint-disable-next-line
   }, []);
 
   return (

@@ -231,13 +231,13 @@ exports[`renders without crashing 1`] = `
             </ion-router-outlet>
           </div>
           <ion-tab-bar
-            current-path="/tabs/schedule"
-            selected-tab="schedule"
+            current-path="/tabs/price"
+            selected-tab="price"
             slot="bottom"
           >
             <ion-tab-button
-              href="/tabs/schedule"
-              tab="schedule"
+              href="/tabs/price"
+              tab="price"
             >
               <ion-icon />
               <ion-label>

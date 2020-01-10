@@ -77,7 +77,7 @@ const SchedulePage: React.FC<SchedulePageProps> = ({ favoriteGroups, sessionGrou
   }
 
   return (
-    <IonPage id="schedule-page">
+    <IonPage id="price-page">
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">

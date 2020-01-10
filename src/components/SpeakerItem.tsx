@@ -66,7 +66,7 @@ const SpeakerItem: React.FC<SpeakerItemProps> = ({ speaker, sessions }) => {
     <>
       <IonCard className="speaker-card">
         <IonCardHeader>
-          <IonItem button detail={false} routerLink={`/tabs/speakers/${speaker.id}`} lines="none">
+          <IonItem button detail={false} routerLink={`/tabs/examples/${speaker.id}`} lines="none">
             {/* <IonAvatar> */}
               <img className="avatarFoto" src={speaker.profilePic} alt={`${speaker.profilePic}`} height="100%"  />
             {/* </IonAvatar> */}
@@ -77,11 +77,11 @@ const SpeakerItem: React.FC<SpeakerItemProps> = ({ speaker, sessions }) => {
         <IonCardContent class="outer-content">
           <IonList>
             {/* {sessions.map(session => (
-              <IonItem routerLink={`/tabs/speakers/sessions/${session.id}`} key={session.name}>
+              <IonItem routerLink={`/tabs/examples/sessions/${session.id}`} key={session.name}>
                 <h3>{session.name}</h3>
               </IonItem>
             ))} */}
-            <IonItem className="blocktext" lines="none" button detail={false} routerLink={`/tabs/speakers/${speaker.id}`}>
+            <IonItem className="blocktext" lines="none" button detail={false} routerLink={`/tabs/examples/${speaker.id}`}>
               <h2>{speaker.name}</h2>            
             </IonItem>
             
