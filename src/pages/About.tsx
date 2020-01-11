@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonButtons, IonMenuButton, IonButton, IonIcon, IonDatetime, IonSelectOption, IonList, IonItem, IonLabel, IonSelect, IonPopover, IonCol, IonRow, IonText } from '@ionic/react';
+import React from 'react';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonButtons, IonMenuButton, IonIcon, IonItem, IonText, IonList } from '@ionic/react';
 import './About.scss';
-import { person, call, more } from 'ionicons/icons';
-import AboutPopover from '../components/AboutPopover';
+import { person, call, pin, logoAndroid, logoApple } from 'ionicons/icons';
 
 interface AboutProps { }
 
 const About: React.FC<AboutProps> = () => {
 
-  const [showPopover, setShowPopover] = useState(false);
-  const [popoverEvent, setPopoverEvent] = useState();
+  // const [showPopover, setShowPopover] = useState(false);
+  // const [popoverEvent, setPopoverEvent] = useState();
 
-  const presentPopover = (e: React.MouseEvent) => {
-    setPopoverEvent(e.nativeEvent);
-    setShowPopover(true);
-  };
-  const conferenceDate = '2047-05-17';
+  // const presentPopover = (e: React.MouseEvent) => {
+  //   setPopoverEvent(e.nativeEvent);
+  //   setShowPopover(true);
+  // };
+  // const conferenceDate = '2047-05-17';
 
   return (
     <IonPage id="about-page">
@@ -33,20 +32,42 @@ const About: React.FC<AboutProps> = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-
+        <IonList>
         {/* <div className="about-header">
           <img src="assets/img/ionic-logo-white.svg" alt="ionic logo" />
         </div> */}
-        <div className="about-info">
-        <IonItem>
-          <IonIcon icon={call} />
-          <IonText>+375 29 1234567</IonText>
-        </IonItem>
+        {/* <div className="about-info"> */}
         <IonItem>
           <IonIcon icon={person} />
-          <IonText>ИП Федор Иванович Тютчев</IonText>
+          <IonText className='about-item'>ИП Стрижевский Андрей Игоревич</IonText>
         </IonItem>
-          <h4 className="ion-padding-start">What is Lorem Ipsum?</h4>
+
+        <IonItem>
+          <IonIcon icon={call} />
+          <IonText className='about-item'>+375 29 8727844</IonText>
+        </IonItem>
+
+        {/* <IonItem>
+          <IonIcon icon={chatbubbles} />
+          <IonText>Viber</IonText>
+        </IonItem> */}
+        
+        <IonItem>
+          <IonIcon icon={pin} />
+          <IonText className='about-item'>Минск, Минская область</IonText>
+        </IonItem>
+        {/* ВСТАВИТЬ ССыЛКИ */}
+        {/* <IonItem>
+          <IonIcon icon={logoApple} />
+          <IonText className='about-item'>Apple Store</IonText>
+        </IonItem>
+
+        <IonItem>
+          <IonIcon icon={logoAndroid} />
+          <IonText className='about-item'>Google Play</IonText>
+        </IonItem> */}
+        
+          {/* <h4 className="ion-padding-start">What is Lorem Ipsum?</h4> */}
 
           {/* <IonList lines="none">
             <IonItem>
@@ -67,13 +88,15 @@ const About: React.FC<AboutProps> = () => {
             </IonItem>
           </IonList> */}
 
-          <p className="ion-padding-start ion-padding-end">
+          {/* <p className="ion-padding-start ion-padding-end">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+          </p> */}
           
 
-        </div>
-          
+        {/* </div> */}
+              
+        </ IonList>
+        
       </IonContent>
       {/* <IonPopover
         isOpen={showPopover}

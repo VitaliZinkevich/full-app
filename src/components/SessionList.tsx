@@ -40,7 +40,7 @@ const SessionList: React.FC<SessionListProps> = ({ addFavorite, removeFavorite, 
       <IonList>
         <IonListHeader>
          Ничего не найдено... 
-         Можем обсудить +375291234567
+         Можем обсудить +375 29 8727844
         </IonListHeader>
       </IonList>
     );

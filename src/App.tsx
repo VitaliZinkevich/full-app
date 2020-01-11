@@ -1,7 +1,7 @@
 // app remote
 // дата фетчинг 1 простой раздел реализовать, запустить не локально, а через сеть
 import React, { useEffect } from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 
@@ -30,11 +30,11 @@ import { connect } from './data/connect';
 import { AppContextProvider } from './data/AppContext';
 import { loadConfData } from './data/sessions/sessions.actions';
 import { setIsLoggedIn, setUsername, loadUserData } from './data/user/user.actions';
-import Account from './pages/Account';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Support from './pages/Support';
-import Tutorial from './pages/Tutorial';
+// import Account from './pages/Account';
+// import Login from './pages/Login';
+// import Signup from './pages/Signup';
+// import Support from './pages/Support';
+// import Tutorial from './pages/Tutorial';
 import HomeOrTutorial from './components/HomeOrTutorial';
 import { Session } from "./models/Session";
 

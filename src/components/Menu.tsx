@@ -8,12 +8,10 @@ import {
   IonListHeader,
   IonMenu,
   IonMenuToggle,
-  IonTitle,
-  IonToolbar,
   IonToggle
 } from '@ionic/react';
-import { cash, contacts, hammer, help, informationCircle, logIn, logOut, map, person, personAdd } from 'ionicons/icons';
-import React, { useState, useEffect } from 'react';
+import { cash, contacts, informationCircle } from 'ionicons/icons';
+import React from 'react';
 import { connect } from '../data/connect';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { setDarkMode } from '../data/user/user.actions';
@@ -25,10 +23,6 @@ const setItem: any = async function (key: string, value:string) {
     value: value
   });
 }
-// const getItem: any = async function (key: string) {
-//   const { value } = await Storage.get({ key: key });
-//   return value;
-// }
 
 const routes = {
   appPages: [
@@ -66,9 +60,7 @@ interface DispatchProps {
 
 interface MenuProps extends RouteComponentProps, StateProps, DispatchProps { }
 
-const Menu: React.FC<MenuProps> = ({ darkMode, history, isAuthenticated, setDarkMode }) => {
-
-  const [disableMenu, setDisableMenu] = useState();
+const Menu: React.FC<MenuProps> = ({ darkMode, setDarkMode }) => {
 
   async function setLite () {
     setItem('light', !darkMode)
@@ -88,7 +80,7 @@ const Menu: React.FC<MenuProps> = ({ darkMode, history, isAuthenticated, setDark
       ));
   }
   return (
-    <IonMenu type="overlay" disabled={disableMenu} contentId="main">
+    <IonMenu type="overlay" contentId="main">
       <IonHeader>
         {/* <IonToolbar>
           <IonTitle>Меню</IonTitle>

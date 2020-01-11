@@ -1,7 +1,7 @@
-import React, { useState, ReactElement } from 'react';
+import React, { useState } from 'react';
 import { IonIcon, IonSelect,  IonSelectOption, IonRow, IonCol, IonButton, IonList, IonItem, IonLabel, IonInput, IonText } from '@ionic/react';
 import './AddWorkForm.scss';
-import { call, person, build } from 'ionicons/icons';
+import { call, person } from 'ionicons/icons';
 import toast from '../pages/toast'
 import validator from 'validator';
 import { IonLoading } from '@ionic/react';
@@ -56,7 +56,7 @@ const AddWorkForm: React.FC = () => {
       if (data) {
         toast("Заказ получен. Вам перезвонят.", 4000);
         setName ('')
-        setPhone ('+375')
+        setPhone ('+375 29 8727844')
         setWorkType ([])
       } else {
         toast("Ошибка, попробуйте еще раз.", 4000);
@@ -88,7 +88,7 @@ const AddWorkForm: React.FC = () => {
                 </IonItem>
                 <IonItem>
                 <IonLabel position="floating"  color="primary"><IonIcon icon={call}/> <IonText>Номер телефона</IonText> </IonLabel>
-                  <IonInput color={'dark'} placeholder='+375291234567' name="phone" type="text" value={phone} onIonChange={e => phoneMask(e.detail.value!)}>
+                  <IonInput color={'dark'} placeholder='+375 29 8727844' name="phone" type="text" value={phone} onIonChange={e => phoneMask(e.detail.value!)}>
                   </IonInput>
                 </IonItem>
               </IonList>

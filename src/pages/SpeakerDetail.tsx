@@ -66,12 +66,13 @@ const SpeakerDetail: React.FC<SpeakerDetailProps> = ({ speaker }) => {
           <IonButton fill="clear" size="small" color="primary" onClick={() => openContact(speaker)}>
               <IonIcon  icon={call} />
           </IonButton>
-          <IonButton fill="clear" size="small" color="twitter">
+          {/* <IonButton fill="clear" size="small" color="twitter">
             <IonIcon icon={logoVk} slot="icon-only"></IonIcon>
           </IonButton>
           <IonButton fill="clear" size="small" color="github">
             <IonIcon icon={logoSkype} slot="icon-only"></IonIcon>
-          </IonButton>
+          </IonButton> */}
+          {/* Вставить ссылку */}
           <IonButton fill="clear" size="small" color="instagram">
             <IonIcon icon={logoInstagram} slot="icon-only"></IonIcon>
           </IonButton>

@@ -1,13 +1,11 @@
-import React, { useState, useRef } from 'react';
-import { IonList, IonListHeader, IonToolbar, IonContent, IonPage, IonButtons, IonMenuButton, IonSegment, IonSegmentButton, IonButton, IonIcon, IonSearchbar, IonRefresher, IonRefresherContent, IonToast, IonModal, IonHeader, getConfig } from '@ionic/react';
+import React, { useState } from 'react';
+import { IonToolbar, IonContent, IonPage, IonButtons, IonMenuButton, IonSegment, IonSegmentButton, IonSearchbar, IonToast, IonModal, IonHeader, getConfig } from '@ionic/react';
 import { connect } from '../data/connect';
-import { options } from 'ionicons/icons';
 import SessionList from '../components/SessionList';
 import SessionListFilter from '../components/SessionListFilter';
 import './SchedulePage.scss'
 import * as selectors from '../data/selectors';
-import { setSearchText, addFavorite, removeFavorite } from '../data/sessions/sessions.actions';
-import ShareSocialFab from '../components/ShareSocialFab';
+import { setSearchText } from '../data/sessions/sessions.actions';
 import { SessionGroup } from '../models/SessionGroup';
 
 import AddWorkForm from '../forms/AddWorkForm';
@@ -46,17 +44,17 @@ type SchedulePageProps = OwnProps & StateProps & DispatchProps;
 const SchedulePage: React.FC<SchedulePageProps> = ({ favoriteGroups, sessionGroups, setSearchText, mode }) => {
   const [segment, setSegment] = useState<'all' | 'favorites'>('all');
   const [showFilterModal, setShowFilterModal] = useState(false);
-  const ionRefresherRef = useRef<HTMLIonRefresherElement>(null);
+  // const ionRefresherRef = useRef<HTMLIonRefresherElement>(null);
   const [showCompleteToast, setShowCompleteToast] = useState(false);
   const [searchTextLocal, setSearchTextLocal] = useState('');
   
 
-  const doRefresh = () => {
-    setTimeout(() => {
-      ionRefresherRef.current!.complete();
-      setShowCompleteToast(true);
-    }, 2500)
-  };
+  // const doRefresh = () => {
+  //   setTimeout(() => {
+  //     ionRefresherRef.current!.complete();
+  //     setShowCompleteToast(true);
+  //   }, 2500)
+  // };
 
   const searchText = (e: any) => {
     setSearchTextLocal(e);

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Session } from '../models/Session';
 import { Speaker } from '../models/Speaker';
-import { IonCard, IonCardHeader, IonItem, IonAvatar, IonCardContent, IonList, IonRow, IonCol, IonButton, IonIcon, IonActionSheet } from '@ionic/react';
-import { logoTwitter, shareAlt, chatboxes } from 'ionicons/icons';
+import { IonCard, IonCardHeader, IonItem,  IonCardContent, IonList, IonRow, IonButton, IonIcon, IonActionSheet } from '@ionic/react';
+import { chatboxes } from 'ionicons/icons';
 import { ActionSheetButton } from '@ionic/core';
 import "./SpeakerItem.scss"
 
@@ -17,31 +17,31 @@ const SpeakerItem: React.FC<SpeakerItemProps> = ({ speaker, sessions }) => {
   const [actionSheetButtons, setActionSheetButtons] = useState<ActionSheetButton[]>([]);
   const [actionSheetHeader, setActionSheetHeader] = useState('');
 
-  function openSpeakerShare(speaker: Speaker) {
-    setActionSheetButtons([
-      {
-        text: 'Copy Link',
-        handler: () => {
-          console.log('Copy Link clicked');
-        }
-      },
-      {
-        text: 'Share via ...',
-        handler: () => {
-          console.log('Share via clicked');
-        }
-      },
-      {
-        text: 'Cancel',
-        role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked');
-        }
-      }
-    ]);
-    setActionSheetHeader(`Share ${speaker.name}`);
-    setShowActionSheet(true);
-  }
+  // function openSpeakerShare(speaker: Speaker) {
+  //   setActionSheetButtons([
+  //     {
+  //       text: 'Copy Link',
+  //       handler: () => {
+  //         console.log('Copy Link clicked');
+  //       }
+  //     },
+  //     {
+  //       text: 'Share via ...',
+  //       handler: () => {
+  //         console.log('Share via clicked');
+  //       }
+  //     },
+  //     {
+  //       text: 'Cancel',
+  //       role: 'cancel',
+  //       handler: () => {
+  //         console.log('Cancel clicked');
+  //       }
+  //     }
+  //   ]);
+  //   setActionSheetHeader(`Share ${speaker.name}`);
+  //   setShowActionSheet(true);
+  // }
 
   function openContact(speaker: Speaker) {
     setActionSheetButtons([

@@ -1,12 +1,11 @@
 import React  from 'react';
 import { IonTabs, IonRouterOutlet, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
 import { Route, Redirect } from 'react-router';
-import { cash, contacts, map, informationCircle } from 'ionicons/icons';
+import { cash, contacts, informationCircle } from 'ionicons/icons';
 import SchedulePage from './SchedulePage';
 import SpeakerList from './SpeakerList';
 import SpeakerDetail from './SpeakerDetail';
 import SessionDetail from './SessionDetail';
-import MapView from './MapView';
 import About from './About';
 
 interface MainTabsProps { }

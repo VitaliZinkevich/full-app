@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
-import { IonActionSheet, IonHeader, IonToolbar, IonContent, IonPage, IonButtons, IonBackButton, IonButton, IonIcon, IonText, IonList, IonItem, IonLabel } from '@ionic/react';
+import { IonActionSheet, IonHeader, IonToolbar, IonContent, IonPage, IonButtons, IonBackButton, IonText, IonList, IonItem, IonLabel } from '@ionic/react';
 import { connect } from '../data/connect';
 import { withRouter, RouteComponentProps } from 'react-router';
 import * as selectors from '../data/selectors';
-import { starOutline, star, share, cloudDownload } from 'ionicons/icons';
 import './SessionDetail.scss';
 import { Time } from '../components/Time';
 import { addFavorite, removeFavorite } from '../data/sessions/sessions.actions';
 import { Session } from '../models/Session';
-import { Speaker } from '../models/Speaker';
 import { ActionSheetButton } from '@ionic/core';
 
 interface OwnProps extends RouteComponentProps { };
@@ -54,15 +52,15 @@ const SessionDetail: React.FC<SessionDetailProps> = ({ session, addFavorite, rem
     return <div>Ничего не найдено</div>
   }
 
-  const isFavorite = favoriteSessions.indexOf(session.id) > -1;
+  // const isFavorite = favoriteSessions.indexOf(session.id) > -1;
   
-  const toggleFavorite = () => { 
-    isFavorite ? removeFavorite(session.id) : addFavorite(session.id);
-  };
-  const shareSession = () => { };
-  const sessionClick = (text: string) => { 
-    console.log(`Clicked ${text}`);
-  };
+  // const toggleFavorite = () => { 
+  //   isFavorite ? removeFavorite(session.id) : addFavorite(session.id);
+  // };
+  // const shareSession = () => { };
+  // const sessionClick = (text: string) => { 
+  //   console.log(`Clicked ${text}`);
+  // };
 
   return (
     <IonPage id="session-detail-page">
