@@ -118,6 +118,14 @@ const Menu: React.FC<MenuProps> = ({ darkMode, setDarkMode }) => {
         <div className="login-logo1">
           <img src="assets/img/google-play-badge.png" alt="google-play" height="250" width="200"/>
         </div> */}
+        {/* style={{' backgroundColor': 'blue'}} */}
+        {/* <IonItem lines="none"  className='item'> */}
+          <a style={ {
+            marginLeft: '3%',
+            fontSize: '0.5rem',
+          }} target='_blank' href=''>Created by Vitali Zinkevich</a>
+        {/* </IonItem> */}
+        
       </IonContent>
     </IonMenu>
   );

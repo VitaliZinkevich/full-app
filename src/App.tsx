@@ -1,6 +1,6 @@
 // app remote
-// убрать Math.random()
 //??? дата фетчинг 1 простой раздел реализовать, запустить не локально, а через сеть
+// убрать Math.random()
 import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';

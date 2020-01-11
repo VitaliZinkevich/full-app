@@ -1,20 +1,40 @@
-import React from 'react';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonButtons, IonMenuButton, IonIcon, IonItem, IonText, IonList } from '@ionic/react';
+import React, {useState} from 'react';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonButtons, IonMenuButton, IonIcon, IonItem, IonText, IonList, IonActionSheet } from '@ionic/react';
 import './About.scss';
-import { person, call, pin, logoAndroid, logoApple } from 'ionicons/icons';
+import { person, call, pin, logoAndroid, logoApple, mail } from 'ionicons/icons';
+import { ActionSheetButton } from '@ionic/core';
 
 interface AboutProps { }
 
 const About: React.FC<AboutProps> = () => {
 
-  // const [showPopover, setShowPopover] = useState(false);
-  // const [popoverEvent, setPopoverEvent] = useState();
+  const [showActionSheet, setShowActionSheet] = useState(false);
+  const [actionSheetButtons, setActionSheetButtons] = useState<ActionSheetButton[]>([]);
+  const [actionSheetHeader, setActionSheetHeader] = useState('');
 
-  // const presentPopover = (e: React.MouseEvent) => {
-  //   setPopoverEvent(e.nativeEvent);
-  //   setShowPopover(true);
-  // };
-  // const conferenceDate = '2047-05-17';
+  function openContact(speaker: {phone?: string, name: string, email?:string}) {
+    let options = []
+    if (speaker.email) {
+      options.push({
+        text: `Email ( ${speaker.email} )`,
+        handler: () => {
+          window.open('mailto:' + speaker.email);
+        }
+      })
+    }
+    if (speaker.phone) {
+      options.push( {
+        text: `Телефон ( ${speaker.phone} )`,
+        handler: () => {
+          window.open('tel:' + speaker.phone);
+        }
+      })
+    }
+    setActionSheetButtons(options);
+    setActionSheetHeader(`${speaker.name}`);
+    setShowActionSheet(true);
+  }
+
 
   return (
     <IonPage id="about-page">
@@ -42,9 +62,14 @@ const About: React.FC<AboutProps> = () => {
           <IonText className='about-item'>ИП Стрижевский Андрей Игоревич</IonText>
         </IonItem>
 
-        <IonItem>
-          <IonIcon icon={call} />
-          <IonText className='about-item'>+375 29 8727844</IonText>
+        <IonItem button onClick={() => openContact({name:'Андрей', phone:'+375 29 8727844'})}>
+          <IonIcon color="primary" icon={call} />
+          <IonText color="primary" className='about-item'>+375 29 8727844</IonText>
+        </IonItem>
+
+        <IonItem button onClick={() => openContact({name:'Андрей', email:'otdelkavdome@mail.ru'})}>
+          <IonIcon color="primary" icon={mail} />
+          <IonText color="primary" className='about-item'>otdelkavdome@mail.ru</IonText>
         </IonItem>
 
         {/* <IonItem>
@@ -96,6 +121,12 @@ const About: React.FC<AboutProps> = () => {
         {/* </div> */}
               
         </ IonList>
+        <IonActionSheet
+        isOpen={showActionSheet}
+        header={actionSheetHeader}
+        onDidDismiss={() => setShowActionSheet(false)}
+        buttons={actionSheetButtons}
+      />
         
       </IonContent>
       {/* <IonPopover
