@@ -25,10 +25,10 @@ const setItem: any = async function (key: string, value:string) {
     value: value
   });
 }
-const getItem: any = async function (key: string) {
-  const { value } = await Storage.get({ key: key });
-  return value;
-}
+// const getItem: any = async function (key: string) {
+//   const { value } = await Storage.get({ key: key });
+//   return value;
+// }
 
 const routes = {
   appPages: [
@@ -67,8 +67,6 @@ interface DispatchProps {
 interface MenuProps extends RouteComponentProps, StateProps, DispatchProps { }
 
 const Menu: React.FC<MenuProps> = ({ darkMode, history, isAuthenticated, setDarkMode }) => {
-  console.log ('props')
-  console.log (darkMode)
 
   const [disableMenu, setDisableMenu] = useState();
 

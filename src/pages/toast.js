@@ -1,7 +1,7 @@
-export default async function presentToast(message) {
+export default async function presentToast(message, duration = 2000) {
     const toast = document.createElement('ion-toast');
     toast.message = message;
-    toast.duration = 2000;
+    toast.duration = duration;
   
     document.body.appendChild(toast);
     return toast.present();
