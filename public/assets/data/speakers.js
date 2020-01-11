@@ -107,3 +107,24 @@
     "email": "ted@example.com",
     "phone": "+1-541-754-3010"
   }]
+
+  [{
+    "id": 1,
+    "name": "Декоративная грунтовка",
+    "profilePic": "assets/img/1.png",
+    "twitter": "123",
+    "about": [{"name":"Квартира", "descr": "балкон 10 м2, подустал", "foto": ["assets/img/1.png","assets/img/1.png"]}],
+    "location": "Everywhere",
+    "email": "email@example.com",
+    "phone": "+375 29 8727844"
+  },
+  {
+    "id": 2,
+    "name": "Штукатурка",
+    "profilePic": "https://pngimage.net/wp-content/uploads/2018/06/%D1%88%D1%82%D1%83%D0%BA%D0%B0%D1%82%D1%83%D1%80%D0%BA%D0%B0-png-.png",
+    "twitter": "123",
+    "about": [{"name":"Объект Дом", "descr": "Lorem Ipsum - это текст-'рыба', часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной 'рыбой' для текстов на латинице с начала XVI века.", "foto": ["https://pngimage.net/wp-content/uploads/2018/06/%D1%88%D1%82%D1%83%D0%BA%D0%B0%D1%82%D1%83%D1%80%D0%BA%D0%B0-png-.png","https://pngimage.net/wp-content/uploads/2018/06/%D1%88%D1%82%D1%83%D0%BA%D0%B0%D1%82%D1%83%D1%80%D0%BA%D0%B0-png-.png"]}],
+    "location": "Everywhere",
+    "email": "email@example.com",
+    "phone": "+375 29 8727844"
+  }]

@@ -43,8 +43,12 @@ const SpeakerDetail: React.FC<SpeakerDetailProps> = ({ speaker }) => {
     setShowActionSheet(true);
   }
 
-  if (!speaker) {
+    if (!speaker) {
     return <div>Пример не найден</div>
+  }
+
+  const openLink = ()=>{
+    window.open ('https://www.instagram.com/strizh_andrei/', '_blank')
   }
 
   return (
@@ -73,7 +77,8 @@ const SpeakerDetail: React.FC<SpeakerDetailProps> = ({ speaker }) => {
             <IonIcon icon={logoSkype} slot="icon-only"></IonIcon>
           </IonButton> */}
           {/* Вставить ссылку */}
-          <IonButton fill="clear" size="small" color="instagram">
+          
+          <IonButton fill="clear" size="small" color="instagram" onClick={() => openLink()}>
             <IonIcon icon={logoInstagram} slot="icon-only"></IonIcon>
           </IonButton>
           

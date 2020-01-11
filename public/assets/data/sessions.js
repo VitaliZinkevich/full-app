@@ -1,3 +1,55 @@
+[
+  {
+  "id": 1,
+  "dateTimeStart": "Штукатурка",
+  "dateTimeEnd": "метр квадратный",
+  "name": "Декоративная штукатурка внутренних стен",
+  "location": "от 10р",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+  "tracks": ["Общестроительные работы,", "Штукатурка"],
+  "phone": "+375 29 8727844"
+},
+{
+  "id": 2,
+  "dateTimeStart": "Штукатурка",
+  "dateTimeEnd": "метр квадратный",
+  "name": "Штукатурка внешних стен",
+  "location": "от 7р",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+  "tracks": ["Общестроительные работы", "Штукатурка"],
+  "phone": "+375 29 8727844"
+},
+{
+  "id": 3,
+  "dateTimeStart": "Стяжка",
+  "dateTimeEnd": "метр кубический",
+  "name": "Стяжка полов, подвалов",
+  "location": "от 15р",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+  "tracks": ["Общестроительные работы,", "Стяжка"],
+  "phone": "+375 29 8727844"
+},
+{
+  "id": 4,
+  "dateTimeStart": "Покраска",
+  "dateTimeEnd": "метр квадратный",
+  "name": "Покраска внешних стен",
+  "location": "от 11р",
+  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+  "tracks": ["Общестроительные работы,", "Покраска"],
+  "phone": "+375 29 8727844"
+}]
+
+
+
+
+
+
+
 [{
   "id": 2,
   "dateTimeStart": "2047-05-17T09:00",

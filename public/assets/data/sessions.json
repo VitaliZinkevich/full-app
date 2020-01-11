@@ -1,45 +1,132 @@
 [
   {
-  "id": 1,
-  "dateTimeStart": "Штукатурка",
-  "dateTimeEnd": "метр квадратный",
-  "name": "Декоративная штукатурка внутренних стен",
-  "location": "от 10р",
-  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
-  "tracks": ["Общестроительные работы,", "Штукатурка"],
-  "phone": "+375 29 8727844"
-},
-{
-  "id": 2,
-  "dateTimeStart": "Штукатурка",
-  "dateTimeEnd": "метр квадратный",
-  "name": "Штукатурка внешних стен",
-  "location": "от 7р",
-  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
-  "tracks": ["Общестроительные работы", "Штукатурка"],
-  "phone": "+375 29 8727844"
-},
-{
-  "id": 3,
-  "dateTimeStart": "Стяжка",
-  "dateTimeEnd": "метр кубический",
-  "name": "Стяжка полов, подвалов",
-  "location": "от 15р",
-  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
-  "tracks": ["Общестроительные работы,", "Стяжка"],
-  "phone": "+375 29 8727844"
-},
-{
-  "id": 4,
-  "dateTimeStart": "Покраска",
-  "dateTimeEnd": "метр квадратный",
-  "name": "Покраска внешних стен",
-  "location": "от 11р",
-  "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
-  "tracks": ["Общестроительные работы,", "Покраска"],
-  "phone": "+375 29 8727844"
-}]
+    "id": 1,
+    "dateTimeStart": "Штукатурка",                                    
+    "dateTimeEnd": "метр квадратный", 
+    "name": "Декоративная штукатурка ",
+    "location": "от 7р",
+    "description": "",
+    "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+    "tracks": [""],
+    "phone": "+375 29 8727844"
+  },
+  {
+    "id": 2,
+    "dateTimeStart": "Штукатурка",
+    "dateTimeEnd": "метр квадратный",
+    "name": "Штукатурка внешних стен",
+    "location": "от 10р",
+    "description": "",
+    "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+    "tracks": [""],
+    "phone": "+375 29 8727844"
+  },
+  {
+    "id": 3,
+    "dateTimeStart": "Штукатурка",
+    "dateTimeEnd": "метр квадратный",
+    "name": "Штукатурка внутренних стен ??????",
+    "location": "от 10р",
+    "description": "",
+    "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+    "tracks": [""],
+    "phone": "+375 29 8727844"}
+  ,
+  {
+    "id": 3,
+    "dateTimeStart": "Малярные работы",
+    "dateTimeEnd": "метр квадратный",
+    "name": "Шпатлевка стен ???? что кроме стен еще можно шпатлевать",
+    "location": "от 4р",
+    "description": "",
+    "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+    "tracks": [""],
+    "phone": "+375 29 8727844"
+     
+  },
+  {
+    "id": 4,
+    "dateTimeStart": "Малярные работы",
+    "dateTimeEnd": "метр квадратный",
+    "name": "Стены под покраску",
+    "location": "от 12р",
+    "description": "",
+    "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+    "tracks": [""],
+    "phone": "+375 29 8727844"
+  },
+  {
+    "id": 5,
+    "dateTimeStart": "Малярные работы",
+    "dateTimeEnd": "метр квадратный ",
+    "name": "Потолки под покраску",
+    "location": "от 15р",
+    "description": "",
+    "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+    "tracks": [""],
+    "phone": "+375 29 8727844"
+  },
+  {
+    "id": 6,
+    "dateTimeStart": "Штукатурка",
+    "dateTimeEnd": "метр квадратный",
+    "name": "Штукатурка фасада ??? Декоративная штукатурка фасада",
+    "location": "от 6р",
+    "description": "",
+    "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+    "tracks": [""],
+    "phone": "+375 29 8727844"
+  },
+    {"id": 7,
+    "dateTimeStart": "Малярные работы",
+    "dateTimeEnd": "метр квадратный",
+    "name": "Покраска ????? полы фасад",
+    "location": "от 5р",
+    "description": "",
+    "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+    "tracks": [""],
+    "phone": "+375 29 8727844"},
+    {
+    "id": 8,
+    "dateTimeStart": "Фасадные работы",                                   
+    "dateTimeEnd": "метр квадратный",
+    "name": "Утепление пенопластом ??? гидроизоляция ???  чем еще утепление",
+    "location": "от 10р",
+    "description": "",
+    "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+    "tracks": [""],
+    "phone": "+375 29 8727844"
+    },{
+    "id": 9,
+    "dateTimeStart": "Поклейка обоев ",                                      
+    "dateTimeEnd": "метр квадратный", 
+    "name": "Поклейка обоев ??? стены потолок", 
+    "location": "от 4р",  
+    "description": "",
+    "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+    "tracks": [""],
+    "phone": "+375 29 8727844"
+    }
+   ,
+    {
+    "id": 10,
+    "dateTimeStart": "Укладка плитки",                                    
+    "dateTimeEnd": "метр квадратный", 
+    "name": "Укладка плитки ??? улица (тротуар свой сфоткай) в помещении",
+    "location": "от 15р",  
+    "description": "",
+    "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+    "tracks": [""],
+    "phone": "+375 29 8727844"},
+    {
+    "id": 11,
+    "dateTimeStart": "Монтаж",                                      
+    "dateTimeEnd": "метр квадратный", 
+    "name": "Монтаж гипсакартон ???? для чего монтаж и куда? ???? Какого гипсокартона", 
+    "location": "от 15р",  
+    "description": "",
+    "speakerIds": [1,2,3,4,5,6,7,8,9,10,11,12,13],
+    "tracks": [""],
+    "phone": "+375 29 8727844"}
+  ]
+    

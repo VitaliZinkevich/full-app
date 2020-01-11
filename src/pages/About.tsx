@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonButtons, IonMenuButton, IonIcon, IonItem, IonText, IonList, IonActionSheet } from '@ionic/react';
 import './About.scss';
-import { person, call, pin, logoAndroid, logoApple, mail } from 'ionicons/icons';
+import { person, call, pin, logoAndroid, logoApple, mail, logoInstagram } from 'ionicons/icons';
 import { ActionSheetButton } from '@ionic/core';
 
 interface AboutProps { }
@@ -35,6 +35,9 @@ const About: React.FC<AboutProps> = () => {
     setShowActionSheet(true);
   }
 
+  const openLink = ()=>{
+    window.open ('https://www.instagram.com/strizh_andrei/', '_blank')
+  }
 
   return (
     <IonPage id="about-page">
@@ -77,6 +80,13 @@ const About: React.FC<AboutProps> = () => {
           <IonText>Viber</IonText>
         </IonItem> */}
         
+
+          
+          <IonItem button onClick={() => openLink()}>
+            <IonIcon color="primary" icon={logoInstagram} />
+              <IonText color="primary" className='about-item'>Instagram</IonText>
+          </IonItem>
+
         <IonItem>
           <IonIcon icon={pin} />
           <IonText className='about-item'>Минск, Минская область</IonText>

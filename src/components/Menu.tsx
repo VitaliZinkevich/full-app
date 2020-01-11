@@ -120,10 +120,10 @@ const Menu: React.FC<MenuProps> = ({ darkMode, setDarkMode }) => {
         </div> */}
         {/* style={{' backgroundColor': 'blue'}} */}
         {/* <IonItem lines="none"  className='item'> */}
-          <a style={ {
+          {/* <a style={ {
             marginLeft: '3%',
             fontSize: '0.5rem',
-          }} target='_blank' href=''>Created by Vitali Zinkevich</a>
+          }} target='_blank' href=''>Created by Vitali Zinkevich</a> */}
         {/* </IonItem> */}
         
       </IonContent>
