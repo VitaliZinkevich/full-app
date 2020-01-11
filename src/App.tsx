@@ -1,7 +1,8 @@
 // app remote
-// проверить инстаграмм в андроиде
+
 //??? дата фетчинг 1 простой раздел реализовать, запустить не локально, а через сеть
 // убрать Math.random()
+// скриншоты поделать как прилагу сделаю
 import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';

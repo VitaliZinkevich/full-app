@@ -99,11 +99,12 @@ const AddWorkForm: React.FC = () => {
             {/* <IonIcon color='primary' icon={build}/> */}
             <IonLabel color='primary'>Тип работ</IonLabel>
             <IonSelect className='myselect' color={'dark'} value={workType} multiple={true} cancelText="Отмена" okText="Выбрать" onIonChange={(e)=>{setWorkType(e.detail.value!)}}>
-              <IonSelectOption value="bacon">Штукатутрка внешняя</IonSelectOption>
-              <IonSelectOption value="olives">Штукатутрка внутренния</IonSelectOption>
-              <IonSelectOption value="xcheese">Отделка внутренния</IonSelectOption>
-              <IonSelectOption value="peppers">Отделка чистовая</IonSelectOption>
-              <IonSelectOption value="mushrooms">Выравнивание потолков</IonSelectOption>
+              <IonSelectOption value="Штукатурка">Штукатурка</IonSelectOption>
+              <IonSelectOption value="Монтаж">Монтаж</IonSelectOption>
+              <IonSelectOption value="Малярные работы">Малярные работы</IonSelectOption>
+              <IonSelectOption value="Фасадные работы">Фасадные работы</IonSelectOption>
+              <IonSelectOption value="Плитка">Плитка</IonSelectOption>
+              <IonSelectOption value="mushrooms">Обои</IonSelectOption>
             </IonSelect>
           </IonItem>
         </IonList>

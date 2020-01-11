@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { RouteComponentProps } from 'react-router';
 import { IonActionSheet, IonIcon, IonHeader, IonToolbar, IonButtons, IonTitle, IonContent, IonButton, IonBackButton, IonPage } from '@ionic/react'
 import './SpeakerDetail.scss';
-import { logoVk , logoSkype, logoInstagram, call } from 'ionicons/icons';
+import { logoInstagram, call } from 'ionicons/icons';
 import { connect } from '../data/connect';
 import * as selectors from '../data/selectors';
 import { Speaker } from '../models/Speaker';

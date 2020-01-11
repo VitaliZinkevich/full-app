@@ -64,6 +64,10 @@ const About: React.FC<AboutProps> = () => {
           <IonIcon icon={person} />
           <IonText className='about-item'>ИП Стрижевский Андрей Игоревич</IonText>
         </IonItem>
+        <IonItem>
+          <IonIcon icon={pin} />
+          <IonText className='about-item'>Минск, Минская область</IonText>
+        </IonItem>
 
         <IonItem button onClick={() => openContact({name:'Андрей', phone:'+375 29 8727844'})}>
           <IonIcon color="primary" icon={call} />
@@ -87,10 +91,7 @@ const About: React.FC<AboutProps> = () => {
               <IonText color="primary" className='about-item'>Instagram</IonText>
           </IonItem>
 
-        <IonItem>
-          <IonIcon icon={pin} />
-          <IonText className='about-item'>Минск, Минская область</IonText>
-        </IonItem>
+        
         {/* ВСТАВИТЬ ССыЛКИ */}
         {/* <IonItem>
           <IonIcon icon={logoApple} />
