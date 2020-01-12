@@ -104,7 +104,7 @@ const AddWorkForm: React.FC = () => {
               <IonSelectOption value="Малярные работы">Малярные работы</IonSelectOption>
               <IonSelectOption value="Фасадные работы">Фасадные работы</IonSelectOption>
               <IonSelectOption value="Плитка">Плитка</IonSelectOption>
-              <IonSelectOption value="mushrooms">Обои</IonSelectOption>
+              <IonSelectOption value="Обои">Обои</IonSelectOption>
             </IonSelect>
           </IonItem>
         </IonList>

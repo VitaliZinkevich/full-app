@@ -8,6 +8,8 @@ import { Time } from '../components/Time';
 import { addFavorite, removeFavorite } from '../data/sessions/sessions.actions';
 import { Session } from '../models/Session';
 import { ActionSheetButton } from '@ionic/core';
+import { IonIcon } from '@ionic/react';
+import { contacts } from 'ionicons/icons';
 
 interface OwnProps extends RouteComponentProps { };
 
@@ -85,9 +87,9 @@ const SessionDetail: React.FC<SessionDetailProps> = ({ session, addFavorite, rem
       <IonContent>
         <div className="ion-padding">
           <h1>{session.name}</h1>
-            {session.tracks.map(track => (
+            {/* {session.tracks.map(track => (
               <span key={track} className={`session-track-${track.toLowerCase()} category`}>{track} </span>
-            ))}
+            ))} */}
           <p>{session.description}</p>
           <IonText color="medium">
             <Time date={session.dateTimeStart} /> &ndash; <Time date={session.dateTimeEnd} />
@@ -95,6 +97,12 @@ const SessionDetail: React.FC<SessionDetailProps> = ({ session, addFavorite, rem
             {session.location}
           </IonText>
         </div>
+        {/* <IonItem> */}
+              
+
+      
+
+        {/* </IonItem> */}
         <IonList>
           {/* <IonItem onClick={() => sessionClick('watch')} button>
             <IonLabel color="primary">Watch</IonLabel>
@@ -115,6 +123,16 @@ const SessionDetail: React.FC<SessionDetailProps> = ({ session, addFavorite, rem
           <IonItem onClick={() => openContact(session)} button={true} lines="none">
             <IonLabel color="primary">Позвонить</IonLabel>
           </IonItem>
+          {session.tracks.map((track)=>{
+                return (
+                  <IonItem key={track} routerLink={track}>
+                    <IonIcon color="primary" icon={contacts} />
+                    <IonText color="medium" style={{'marginLeft': '1%'}}>
+                      Пример работы
+                    </IonText>
+                  </IonItem>
+                )
+              })}
         </IonList>
         <IonActionSheet
         isOpen={showActionSheet}
