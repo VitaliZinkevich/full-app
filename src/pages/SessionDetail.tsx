@@ -90,7 +90,6 @@ const SessionDetail: React.FC<SessionDetailProps> = ({ session, addFavorite, rem
             {/* {session.tracks.map(track => (
               <span key={track} className={`session-track-${track.toLowerCase()} category`}>{track} </span>
             ))} */}
-          <p>{session.description}</p>
           <IonText color="medium">
             <Time date={session.dateTimeStart} /> &ndash; <Time date={session.dateTimeEnd} />
             <br />
@@ -123,12 +122,12 @@ const SessionDetail: React.FC<SessionDetailProps> = ({ session, addFavorite, rem
           <IonItem onClick={() => openContact(session)} button={true} lines="none">
             <IonLabel color="primary">Позвонить</IonLabel>
           </IonItem>
-          {session.tracks.map((track)=>{
+          {session.description.map((example)=>{
                 return (
-                  <IonItem key={track} routerLink={track}>
+                  <IonItem key={example.link} routerLink={example.link}>
                     <IonIcon color="primary" icon={contacts} />
                     <IonText color="medium" style={{'marginLeft': '1%'}}>
-                      Пример работы
+                      {example.name}
                     </IonText>
                   </IonItem>
                 )

@@ -4,7 +4,7 @@ export interface Session {
   dateTimeEnd: string;
   name: string;
   location: string;
-  description: string;
+  description: [{name:string, link:string}];
   speakerIds: number[];
   tracks: string[];
   phone: string;
