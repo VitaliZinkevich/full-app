@@ -6,8 +6,8 @@ import { Location } from '../models/Location';
 const { Storage } = Plugins;
 
 const locationsUrl = '/assets/data/locations.json';
-const sessionsUrl = '/assets/data/sessions.json';
-const speakersUrl = '/assets/data/speakers.json';
+const sessionsUrl = 'https://t8vlnama64.execute-api.us-east-1.amazonaws.com/dev/price';
+const speakersUrl = 'https://t8vlnama64.execute-api.us-east-1.amazonaws.com/dev/example';
 
 const HAS_LOGGED_IN = 'hasLoggedIn';
 const HAS_SEEN_TUTORIAL = 'hasSeenTutorial';

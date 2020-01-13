@@ -3,8 +3,10 @@
   "name": "Декоративная штукатурка внутренних стен.",
   "profilePic": "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/1/1title.jpg",
   "twitter": "",
-  "about": [{"name":"Дом", "descr": "", "foto": ["https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/1/1-1.jpg", "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/1/1-2.jpg",
-    "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/1/1-3.jpg", "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/1/1-4.jpg"]}],
+  "about": [{"name":"Дом", "descr": "", "foto": [
+    "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/1/1-2.jpg",
+    "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/1/1-3.jpg", 
+    "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/1/1-4.jpg"]}],
   "location": "",
   "email": "otdelkavdome@mail.ru",
   "phone": "+375 29 8727844"
@@ -73,8 +75,6 @@
       "twitter": "",
       "about": [{"name":"Квартира", "descr": "", "foto": [
         "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/6/6-1.jpg",
-        "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/6/6-2.jpg",
-        "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/6/6-3.jpg",
         "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/6/6-4.jpg",
         "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/6/6-5.jpg",
         "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/6/6-6.jpg",
@@ -127,5 +127,21 @@
             ]}],
             "location": "",
             "email": "otdelkavdome@mail.ru",
-            "phone": "+375 29 8727844"}
+            "phone": "+375 29 8727844"},
+            {"id": 10,
+              "name": "Внутренняя отделка стен декоративной штукатуркой",
+              "profilePic": "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/10/10title.jpg",
+              "twitter": "",
+              "about": [{"name":"Здание", "descr": "", "foto": [
+                "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/10/10-1.jpg",
+                "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/10/10-2.jpg",
+                "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/10/10-3.jpg",
+                "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/10/10-4.jpg",
+                "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/10/10-5.jpg",
+                "https://pics-for-build-strizhevskiy-app.s3-eu-west-1.amazonaws.com/10/10-5.jpg"
+          
+              ]}],
+              "location": "",
+              "email": "otdelkavdome@mail.ru",
+              "phone": "+375 29 8727844"}
 ]

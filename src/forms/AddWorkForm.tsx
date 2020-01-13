@@ -33,7 +33,15 @@ const AddWorkForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   const phoneMask = (e: string)=>{
-    if (!Number.isInteger (Number (e.split("").pop()))){
+    if (e === '') {
+      return false;
+    } 
+
+    if (e === '+375 ') {
+      return toast('Только числа, пожалуйста.', 4000);
+    } 
+
+    if (!Number.isInteger (Number (e.split("").pop())) && e !== '+'){
       return toast('Не верный символ. Только числа.');
     }
     setPhone(e);
@@ -54,9 +62,9 @@ const AddWorkForm: React.FC = () => {
     .then((data) => {
       setLoading (false);
       if (data) {
-        toast("Заказ получен. Вам перезвонят.", 4000);
+        toast("Заказ получен, спасибо. Вам перезвонят.", 4000);
         setName ('')
-        setPhone ('+375 29 8727844')
+        setPhone ('+375')
         setWorkType ([])
       } else {
         toast("Ошибка, попробуйте еще раз.", 4000);
@@ -88,7 +96,7 @@ const AddWorkForm: React.FC = () => {
                 </IonItem>
                 <IonItem>
                 <IonLabel position="floating"  color="primary"><IonIcon icon={call}/> <IonText>Номер телефона</IonText> </IonLabel>
-                  <IonInput color={'dark'} placeholder='+375 29 8727844' name="phone" type="text" value={phone} onIonChange={e => phoneMask(e.detail.value!)}>
+                  <IonInput color={'dark'} placeholder='+375291234567' name="phone" type="text" value={phone} onIonChange={e => phoneMask(e.detail.value!)}>
                   </IonInput>
                 </IonItem>
               </IonList>

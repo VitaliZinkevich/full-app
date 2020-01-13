@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Session } from '../models/Session';
 import { Speaker } from '../models/Speaker';
-import { IonCard, IonCardHeader, IonItem,  IonCardContent, IonList, IonRow, IonButton, IonIcon, IonActionSheet } from '@ionic/react';
-import { chatboxes } from 'ionicons/icons';
+import { IonCard, IonCardHeader, IonItem,  IonCardContent, IonList, IonRow, IonActionSheet } from '@ionic/react';
+// import { call } from 'ionicons/icons';
 import { ActionSheetButton } from '@ionic/core';
 import "./SpeakerItem.scss"
 
@@ -43,24 +43,24 @@ const SpeakerItem: React.FC<SpeakerItemProps> = ({ speaker, sessions }) => {
   //   setShowActionSheet(true);
   // }
 
-  function openContact(speaker: Speaker) {
-    setActionSheetButtons([
-      // {
-      //   text: `Email ( ${speaker.email} )`,
-      //   handler: () => {
-      //     window.open('mailto:' + speaker.email);
-      //   }
-      // },
-      {
-        text: `Телефон ( ${speaker.phone} )`,
-        handler: () => {
-          window.open('tel:' + speaker.phone);
-        }
-      }
-    ]);
-    setActionSheetHeader(`${speaker.name}`);
-    setShowActionSheet(true);
-  }
+  // function openContact(speaker: Speaker) {
+  //   setActionSheetButtons([
+  //     // {
+  //     //   text: `Email ( ${speaker.email} )`,
+  //     //   handler: () => {
+  //     //     window.open('mailto:' + speaker.email);
+  //     //   }
+  //     // },
+  //     {
+  //       text: `Телефон ( ${speaker.phone} )`,
+  //       handler: () => {
+  //         window.open('tel:' + speaker.phone);
+  //       }
+  //     }
+  //   ]);
+  //   setActionSheetHeader(`${speaker.name}`);
+  //   setShowActionSheet(true);
+  // }
 
   return (
     <>
@@ -108,10 +108,9 @@ const SpeakerItem: React.FC<SpeakerItemProps> = ({ speaker, sessions }) => {
           </IonButton>
           </IonCol> */}
           {/* <IonCol text-left size="4"> */}
-            <IonButton fill="clear" size="small" color="primary" onClick={() => openContact(speaker)}>
-              <IonIcon className="mr-15" icon={chatboxes} />
-              Контакты
-            </IonButton>
+            {/* <IonButton fill="clear" size="small" color="primary" onClick={() => openContact(speaker)}>
+              <IonIcon className="mr-15" icon={call} />
+            </IonButton> */}
           {/* </IonCol> */}
         </IonRow>
       </IonCard>
