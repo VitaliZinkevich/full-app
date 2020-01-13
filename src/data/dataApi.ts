@@ -6,9 +6,9 @@ import { Location } from '../models/Location';
 const { Storage } = Plugins;
 
 const locationsUrl = '/assets/data/locations.json';
-const sessionsUrl = 'https://t8vlnama64.execute-api.us-east-1.amazonaws.com/dev/price';
-const speakersUrl = 'https://t8vlnama64.execute-api.us-east-1.amazonaws.com/dev/example';
-
+const sessionsUrl = 'https://t8vlnama64.execute-api.us-east-1.amazonaws.com/production/price';
+// const speakersUrl = 'https://849dl3hwsc.execute-api.us-east-1.amazonaws.com/production/example';
+const speakersUrl = '/assets/data/speakers.json';
 const HAS_LOGGED_IN = 'hasLoggedIn';
 const HAS_SEEN_TUTORIAL = 'hasSeenTutorial';
 const USERNAME = 'username';
