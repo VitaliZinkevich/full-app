@@ -58,7 +58,7 @@ const AddWorkForm: React.FC = () => {
       workType
     }
     setLoading (true);
-    postData('https://t8vlnama64.execute-api.us-east-1.amazonaws.com/production/order', order)
+    postData('https://849dl3hwsc.execute-api.us-east-1.amazonaws.com/production/order', order)
     .then((data) => {
       setLoading (false);
       if (data) {
