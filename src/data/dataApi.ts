@@ -6,8 +6,6 @@ import { Location } from '../models/Location';
 const { Storage } = Plugins;
 
 const locationsUrl = '/assets/data/locations.json';
-// const sessionsUrlProd = 'https://849dl3hwsc.execute-api.us-east-1.amazonaws.com/production/price';
-// const speakersUrlProd = 'https://849dl3hwsc.execute-api.us-east-1.amazonaws.com/production/example';
 const sessionsUrlDev = 'https://t8vlnama64.execute-api.us-east-1.amazonaws.com/dev/price';
 const speakersUrlDev = 'https://t8vlnama64.execute-api.us-east-1.amazonaws.com/dev/example';
 // const sessionsUrl = '/assets/data/sessions.json';
