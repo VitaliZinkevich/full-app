@@ -84,21 +84,21 @@ const SpeakerDetail: React.FC<SpeakerDetailProps> = ({ speaker }) => {
           
         </div>
 
-        <div>{speaker.about.map ((elem, index:number)=>{
+        <div>{speaker.about.length ? speaker.about.map ((elem, index:number)=>{
           return (
-              <div key={index}>
-                <p>{elem.name}</p>
-                <p>{elem.descr}</p>
+              <div key={index} >
+                <h3 style={{"color": "black"}}>{elem.name}</h3>
+                <p style={{"color": "black"}}>{elem.descr}</p>
                 {elem.foto.map(link=>{
                   return (
-                    <div key={link+Math.random()}>
-                      <img className="detailesFoto" key={link+Math.random()} src={link} alt="foto example" height="100%" width="100%" />
+                    <div key={link}>
+                      <img className="detailesFoto" key={link} src={link} alt="foto example" height="100%" width="100%" />
                     </div>
                   )
                 })}
               </div>
           )
-        })}</div>
+        }): null }</div>
         <IonActionSheet
         isOpen={showActionSheet}
         header={actionSheetHeader}
