@@ -6,10 +6,8 @@ import { Location } from '../models/Location';
 const { Storage } = Plugins;
 
 const locationsUrl = '/assets/data/locations.json';
-const sessionsUrlProd = 'https://849dl3hwsc.execute-api.us-east-1.amazonaws.com/production/price';
-const speakersUrlProd = 'https://849dl3hwsc.execute-api.us-east-1.amazonaws.com/production/example';
-// const sessionsUrlDev = 'https://t8vlnama64.execute-api.us-east-1.amazonaws.com/dev/price';
-// const speakersUrlDev = 'https://t8vlnama64.execute-api.us-east-1.amazonaws.com/dev/example';
+const sessionsUrlDev = 'https://t8vlnama64.execute-api.us-east-1.amazonaws.com/dev/price';
+const speakersUrlDev = 'https://t8vlnama64.execute-api.us-east-1.amazonaws.com/dev/example';
 // const sessionsUrl = '/assets/data/sessions.json';
 const HAS_LOGGED_IN = 'hasLoggedIn';
 const HAS_SEEN_TUTORIAL = 'hasSeenTutorial';
@@ -17,9 +15,9 @@ const USERNAME = 'username';
 
 export const getConfData = async () => {
   const response = await Promise.all([
-    fetch(sessionsUrlProd),
+    fetch(sessionsUrlDev),
     fetch(locationsUrl),
-    fetch(speakersUrlProd)]);
+    fetch(speakersUrlDev)]);
   const sessions = await response[0].json() as Session[];
   const locations = await response[1].json() as Location[];
   const speakers = await response[2].json() as Speaker[];
