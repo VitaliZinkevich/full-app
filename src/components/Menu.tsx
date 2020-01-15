@@ -106,11 +106,22 @@ const Menu: React.FC<MenuProps> = ({ darkMode, setDarkMode }) => {
           </IonItem>
         </IonList> */}
         {/* <IonList> */}
-          <IonItem lines="none">
+        <IonList>
+        <IonItem lines="none">
             <IonLabel>Темная тема</IonLabel>
             <IonToggle checked={darkMode} onClick={() => setLite ()} />
             
           </IonItem>
+          <IonItem lines="none">
+            <img  src="assets/img/gs.svg" />
+           
+          </IonItem>
+          {/* <IonItem lines="none">
+            <img  src="assets/img/apple.svg" height="150" width="646"/>
+            
+          </IonItem> */}
+        </IonList>
+          {/* height="150" width="150" */}
         {/* </IonList> */}
         {/* <div className="login-logo1">
           <img src="assets/img/appStore.svg" alt="appStore" height="250" width="200"/>

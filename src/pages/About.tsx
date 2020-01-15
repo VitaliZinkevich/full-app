@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonButtons, IonMenuButton, IonIcon, IonItem, IonText, IonList, IonActionSheet } from '@ionic/react';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonButtons, IonMenuButton, IonIcon, IonItem, IonText, IonList, IonActionSheet, IonLabel } from '@ionic/react';
 import './About.scss';
 import { person, call, pin, logoAndroid, logoApple, mail, logoInstagram } from 'ionicons/icons';
 import { ActionSheetButton } from '@ionic/core';
@@ -76,7 +76,7 @@ const About: React.FC<AboutProps> = () => {
 
         <IonItem button onClick={() => openContact({name:'Андрей', email:'otdelkavdome@mail.ru'})}>
           <IonIcon color="primary" icon={mail} />
-          <IonText color="primary" className='about-item'>otdelkavdome@mail.ru</IonText>
+          <IonLabel color="primary" className='about-item'>otdelkavdome@mail.ru</IonLabel>
         </IonItem>
 
         {/* <IonItem>
@@ -96,12 +96,12 @@ const About: React.FC<AboutProps> = () => {
         {/* <IonItem>
           <IonIcon icon={logoApple} />
           <IonText className='about-item'>Apple Store</IonText>
-        </IonItem>
-
-        <IonItem>
-          <IonIcon icon={logoAndroid} />
-          <IonText className='about-item'>Google Play</IonText>
         </IonItem> */}
+
+        <IonItem button>
+          <IonIcon color="primary"  icon={logoAndroid} />
+          <IonText color="primary"  className='about-item'>Доступно в Google Play</IonText>
+        </IonItem>
         
           {/* <h4 className="ion-padding-start">What is Lorem Ipsum?</h4> */}
 

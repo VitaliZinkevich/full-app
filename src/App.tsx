@@ -1,7 +1,4 @@
-// app remote
-
-// фото для раздела цен с примерами сделать
-// скриншоты поделать как прилагу сделаю
+// почистить фото в паблике
 import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
