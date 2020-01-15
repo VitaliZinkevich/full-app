@@ -91,8 +91,8 @@ const SpeakerDetail: React.FC<SpeakerDetailProps> = ({ speaker }) => {
                 <p>{elem.descr}</p>
                 {elem.foto.map(link=>{
                   return (
-                    <div key={link+Math.random()}>
-                      <img className="detailesFoto" key={link+Math.random()} src={link} alt="foto example" height="100%" width="100%" />
+                    <div key={link}>
+                      <img className="detailesFoto" key={link} src={link} alt="foto example" height="100%" width="100%" />
                     </div>
                   )
                 })}

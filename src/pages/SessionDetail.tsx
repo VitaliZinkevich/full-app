@@ -91,9 +91,8 @@ const SessionDetail: React.FC<SessionDetailProps> = ({ session, addFavorite, rem
               <span key={track} className={`session-track-${track.toLowerCase()} category`}>{track} </span>
             ))} */}
           <IonText color="medium">
-            <Time date={session.dateTimeStart} /> &ndash; <Time date={session.dateTimeEnd} />
-            <br />
-            {session.location}
+           <p style={{"color" : "black"}}> <Time date={session.dateTimeStart} /> &ndash; <Time date={session.dateTimeEnd} /> &ndash; {session.location}</p>
+                        
           </IonText>
         </div>
         {/* <IonItem> */}
