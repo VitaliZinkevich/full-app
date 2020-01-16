@@ -10,12 +10,13 @@ import {
   IonMenuToggle,
   IonToggle
 } from '@ionic/react';
-import { cash, contacts, informationCircle } from 'ionicons/icons';
+import { cash, contacts, logoAndroid, logoApple, informationCircle } from 'ionicons/icons';
 import React from 'react';
 import { connect } from '../data/connect';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { setDarkMode } from '../data/user/user.actions';
 import { Plugins } from '@capacitor/core';
+import { generateKeyPair } from 'crypto';
 const { Storage } = Plugins;
 const setItem: any = async function (key: string, value:string) {
   Storage.set({
@@ -79,6 +80,36 @@ const Menu: React.FC<MenuProps> = ({ darkMode, setDarkMode }) => {
         </IonMenuToggle>
       ));
   }
+
+
+  function getOS() {
+    var userAgent = window.navigator.userAgent,
+        platform = window.navigator.platform,
+        macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+        windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+        iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+        os = null;
+  
+    if (macosPlatforms.indexOf(platform) !== -1) {
+      os = 'Mac OS';
+    } else if (iosPlatforms.indexOf(platform) !== -1) {
+      os = 'iOS';
+    } else if (windowsPlatforms.indexOf(platform) !== -1) {
+      os = 'Windows';
+    } else if (/Android/.test(userAgent)) {
+      os = 'Android';
+    } else if (!os && /Linux/.test(platform)) {
+      os = 'Linux';
+    }
+  
+    return os;
+  }
+  
+  
+
+  const openLink = (link: string)=>{
+    window.open (link, '_blank')
+  }
   return (
     <IonMenu type="overlay" contentId="main">
       <IonHeader>
@@ -108,18 +139,30 @@ const Menu: React.FC<MenuProps> = ({ darkMode, setDarkMode }) => {
         {/* <IonList> */}
         <IonList>
         <IonItem lines="none">
-            <IonLabel>Темная тема</IonLabel>
+            <IonLabel>Темная сторона</IonLabel>
             <IonToggle checked={darkMode} onClick={() => setLite ()} />
             
-          </IonItem>
-          <IonItem lines="none">
+        </IonItem>
+        {getOS() === "Windows" ||
+        getOS() === "Mac OS" ||
+        getOS() === "Linux" ? (<IonItem lines="none" >
+           <a style={ {
+            color:"grey",
+            marginLeft: '3%',
+            fontSize: '0.5rem',
+          }} target='_blank' href='http:\\vitalizinkevich.name'>VitaliZinkevich</a>
+        {/* <IonIcon style={{"cursor": "pointer"}} slot="end" icon={logoApple} onClick={() => openLink ('')}/> */}
+        <IonIcon style={{"cursor": "pointer"}} slot="end" icon={logoAndroid} onClick={() => openLink ('')}/>
+      </IonItem>) : null}  
+        
+          {/* <IonItem lines="none">
             <img  src="assets/img/gs.svg" />
-           
-          </IonItem>
+          </IonItem> */}
           {/* <IonItem lines="none">
             <img  src="assets/img/apple.svg" height="150" width="646"/>
             
           </IonItem> */}
+         
         </IonList>
           {/* height="150" width="150" */}
         {/* </IonList> */}
@@ -131,10 +174,7 @@ const Menu: React.FC<MenuProps> = ({ darkMode, setDarkMode }) => {
         </div> */}
         {/* style={{' backgroundColor': 'blue'}} */}
         {/* <IonItem lines="none"  className='item'> */}
-          <a style={ {
-            marginLeft: '3%',
-            fontSize: '0.5rem',
-          }} target='_blank' href='http:\\vitalizinkevich.name'>VitaliZinkevich</a>
+          
         {/* </IonItem> */}
         
       </IonContent>

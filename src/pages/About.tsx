@@ -35,6 +35,29 @@ const About: React.FC<AboutProps> = () => {
     setShowActionSheet(true);
   }
 
+  function getOS() {
+    var userAgent = window.navigator.userAgent,
+        platform = window.navigator.platform,
+        macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+        windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+        iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+        os = null;
+  
+    if (macosPlatforms.indexOf(platform) !== -1) {
+      os = 'Mac OS';
+    } else if (iosPlatforms.indexOf(platform) !== -1) {
+      os = 'iOS';
+    } else if (windowsPlatforms.indexOf(platform) !== -1) {
+      os = 'Windows';
+    } else if (/Android/.test(userAgent)) {
+      os = 'Android';
+    } else if (!os && /Linux/.test(platform)) {
+      os = 'Linux';
+    }
+  
+    return os;
+  }
+
   const openLink = ()=>{
     window.open ('https://www.instagram.com/strizh_andrei/', '_blank')
   }
@@ -97,11 +120,21 @@ const About: React.FC<AboutProps> = () => {
           <IonIcon icon={logoApple} />
           <IonText className='about-item'>Apple Store</IonText>
         </IonItem> */}
-
+      {getOS() === "Windows" ||
+        getOS() === "Mac OS" ||
+        getOS() === "Linux" ? (<>
         <IonItem button>
           <IonIcon color="primary"  icon={logoAndroid} />
           <IonText color="primary"  className='about-item'>Доступно в Google Play</IonText>
         </IonItem>
+
+        {/* <IonItem button>
+          <IonIcon color="primary"  icon={logoApple} />
+          <IonText color="primary"  className='about-item'>Доступно в Apple Store</IonText>
+        </IonItem> */}
+        </> 
+        ): null}
+        
         
           {/* <h4 className="ion-padding-start">What is Lorem Ipsum?</h4> */}
 
