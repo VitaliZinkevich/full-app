@@ -1,5 +1,5 @@
 import React  from 'react';
-import { IonTabs, IonRouterOutlet, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/react';
+import { IonTabs, IonRouterOutlet, IonTabBar, IonTabButton, IonIcon, IonLabel, IonItem } from '@ionic/react';
 import { Route, Redirect } from 'react-router';
 import { cash, contacts, informationCircle } from 'ionicons/icons';
 import SchedulePage from './SchedulePage';
@@ -28,6 +28,7 @@ const MainTabs: React.FC<MainTabsProps> = () => {
         {/* <Route path="/tabs/map" render={() => <MapView />} exact={true} /> */}
         <Route path="/tabs/about" render={() => <About />} exact={true} />
       </IonRouterOutlet>
+      
       <IonTabBar slot="bottom">
         <IonTabButton tab="price" href="/tabs/price">
           <IonIcon icon={cash} />
@@ -44,7 +45,9 @@ const MainTabs: React.FC<MainTabsProps> = () => {
         <IonTabButton tab="about" href="/tabs/about">
           <IonIcon icon={informationCircle} />
           <IonLabel>Контакты</IonLabel>
+          
         </IonTabButton>
+        
       </IonTabBar>
     </IonTabs>
   );

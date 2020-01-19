@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 // app remote
 
 // скриншоты поделать как прилагу сделаю
+=======
+>>>>>>> master
 import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
